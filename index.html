@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E-Portfolio PPG - Dwi Wahyu Nugroho</title>
+  <title>Profil Mahasiswa PPG - Dwi Wahyu Nugroho</title>
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
   <script>
     tailwind.config = {
       theme: {
@@ -18,8 +19,6 @@
             accent: '#06b6d4',
             'accent-dark': '#0891b2',
             gold: '#f59e0b',
-            'gold-light': '#fbbf24',
-            rose: '#f43f5e',
           },
           fontFamily: {
             display: ['Sora', 'sans-serif'],
@@ -34,7 +33,6 @@
     *, *::before, *::after { box-sizing: border-box; }
     html, body { height: 100%; margin: 0; padding: 0; }
 
-    /* ===== CSS VARIABLES - LIGHT MODE ===== */
     :root {
       --bg: #f8f7ff;
       --bg2: #ffffff;
@@ -42,21 +40,15 @@
       --surface2: #f1effe;
       --text: #1a0a3b;
       --text-muted: #6b7280;
-      --text-sub: #9ca3af;
       --border: rgba(124,58,237,0.12);
       --border2: rgba(124,58,237,0.2);
       --primary: #7c3aed;
-      --primary-rgb: 124,58,237;
       --accent: #06b6d4;
-      --accent-rgb: 6,182,212;
-      --gold: #f59e0b;
       --card-shadow: 0 4px 24px rgba(124,58,237,0.08);
       --card-shadow-hover: 0 16px 48px rgba(124,58,237,0.18);
       --nav-bg: rgba(248,247,255,0.85);
-      --hero-text: #1a0a3b;
     }
 
-    /* ===== CSS VARIABLES - DARK MODE ===== */
     body.dark {
       --bg: #0d0b1a;
       --bg2: #130f26;
@@ -64,7 +56,6 @@
       --surface2: #221b45;
       --text: #f0ebff;
       --text-muted: #a89fcc;
-      --text-sub: #6b6390;
       --border: rgba(124,58,237,0.18);
       --border2: rgba(124,58,237,0.35);
       --card-shadow: 0 4px 24px rgba(0,0,0,0.4);
@@ -77,40 +68,8 @@
       background: var(--bg);
       color: var(--text);
       transition: background-color 0.4s ease, color 0.4s ease;
-      overflow-x: hidden;
     }
 
-    /* ===== UTILITY ===== */
-    .text-themed { color: var(--text); }
-    .text-muted { color: var(--text-muted); }
-    .bg-themed { background: var(--bg); }
-    .bg-themed2 { background: var(--bg2); }
-    .surface-bg { background: var(--surface); }
-    .surface2-bg { background: var(--surface2); }
-    .border-themed { border-color: var(--border); }
-    .primary-color { color: var(--primary); }
-    .accent-color { color: var(--accent); }
-
-    /* ===== ANIMATIONS ===== */
-    @keyframes fadeInUp { from { opacity:0; transform:translateY(32px); } to { opacity:1; transform:translateY(0); } }
-    @keyframes fadeInLeft { from { opacity:0; transform:translateX(32px); } to { opacity:1; transform:translateX(0); } }
-    @keyframes scaleIn { from { opacity:0; transform:scale(0.88); } to { opacity:1; transform:scale(1); } }
-    @keyframes floatY { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-16px);} }
-    @keyframes spinSlow { to { transform:rotate(360deg); } }
-    @keyframes glowPulse { 0%,100%{opacity:0.5;} 50%{opacity:1;} }
-    @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.2;} }
-    @keyframes shimmer { 0%{background-position:-200% center;} 100%{background-position:200% center;} }
-
-    .animate-fade-in { animation: fadeInUp 0.8s ease forwards; opacity:0; }
-    .animate-slide-left { animation: fadeInLeft 0.8s ease forwards; opacity:0; }
-    .animate-scale { animation: scaleIn 0.6s ease forwards; opacity:0; }
-    .animate-float { animation: floatY 4s ease-in-out infinite; }
-    .delay-100 { animation-delay:0.1s; }
-    .delay-200 { animation-delay:0.2s; }
-    .delay-300 { animation-delay:0.3s; }
-    .delay-400 { animation-delay:0.4s; }
-
-    /* ===== CARDS ===== */
     .card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -123,29 +82,17 @@
       border-color: var(--border2);
     }
 
-    /* ===== GRADIENT TEXT ===== */
     .grad-text {
       background: linear-gradient(135deg, var(--primary), var(--accent));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-    .grad-text-gold {
-      background: linear-gradient(135deg, var(--gold), #f97316);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
 
-    /* ===== NAVBAR ===== */
     nav {
       background: var(--nav-bg);
       backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
-      transition: all 0.3s ease;
-    }
-    nav.scrolled {
-      box-shadow: 0 4px 30px rgba(124,58,237,0.12);
     }
     .nav-link {
       position: relative;
@@ -162,470 +109,60 @@
       border-radius: 2px;
       transition: width 0.3s ease;
     }
-    .nav-link:hover { color: var(--primary); }
-    .nav-link:hover::after { width: 100%; }
+    .nav-link:hover, .nav-link.active { color: var(--primary); }
+    .nav-link:hover::after, .nav-link.active::after { width: 100%; }
 
-    /* ===== HERO ===== */
-#hero {
-  min-height: 100vh;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-
-  /* Background Image */
-  background-image:
-    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-    url('https://picsum.photos/1920/1080');
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-    /* Light hero BG */
-    .hero-bg-light {
-      background:
-        radial-gradient(ellipse at 15% 50%, rgba(124,58,237,0.12) 0%, transparent 55%),
-        radial-gradient(ellipse at 85% 20%, rgba(6,182,212,0.10) 0%, transparent 50%),
-        radial-gradient(ellipse at 60% 85%, rgba(245,158,11,0.08) 0%, transparent 45%),
-        var(--bg);
-    }
-    /* Dark hero BG */
-    body.dark #hero {
-      background:
-        radial-gradient(ellipse at 15% 50%, rgba(124,58,237,0.22) 0%, transparent 55%),
-        radial-gradient(ellipse at 85% 20%, rgba(6,182,212,0.15) 0%, transparent 50%),
-        radial-gradient(ellipse at 60% 85%, rgba(245,158,11,0.08) 0%, transparent 45%),
-        var(--bg);
-    }
-
-    .dot-grid {
-      position: absolute; inset:0; pointer-events:none;
-      background-image: radial-gradient(var(--border2) 1px, transparent 1px);
-      background-size: 36px 36px;
-      opacity: 0.6;
-    }
-
-    .orb {
-      position: absolute; border-radius: 50%;
-      filter: blur(72px); pointer-events: none;
-      animation: floatY 7s ease-in-out infinite;
-    }
-    .orb1 { width:480px;height:480px;background:rgba(124,58,237,0.18);top:-120px;right:-80px;animation-delay:0s; }
-    .orb2 { width:340px;height:340px;background:rgba(6,182,212,0.12);bottom:40px;left:-100px;animation-delay:3s; }
-    .orb3 { width:240px;height:240px;background:rgba(245,158,11,0.10);top:40%;right:25%;animation-delay:5s; }
-
-    body:not(.dark) .orb1 { background:rgba(124,58,237,0.10); }
-    body:not(.dark) .orb2 { background:rgba(6,182,212,0.08); }
-    body:not(.dark) .orb3 { background:rgba(245,158,11,0.07); }
-
-    /* ===== HERO PILL ===== */
-    .hero-pill {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(124,58,237,0.1);
-      border: 1px solid rgba(124,58,237,0.25);
-      color: var(--primary);
-      padding: 8px 18px; border-radius: 100px;
-      font-size: 13px; font-weight: 700;
-      margin-bottom: 28px;
-    }
-    body.dark .hero-pill { background:rgba(124,58,237,0.18); border-color:rgba(124,58,237,0.4); color:#c4b5fd; }
-    .pill-dot { width:7px;height:7px;background:var(--primary);border-radius:50%;animation:blink 1.6s ease-in-out infinite; }
-
-    /* ===== HERO TITLE ===== */
-    .hero-title {
-      font-family: 'Sora', sans-serif;
-      font-weight: 800;
-      font-size: clamp(38px, 5vw, 62px);
-      line-height: 1.1;
-      margin-bottom: 16px;
-      color: var(--text);
-      color: white;
-    }
-
-    /* ===== HERO CHIPS ===== */
-    .hero-chip {
-      display: inline-flex; align-items: center; gap: 7px;
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      padding: 7px 16px; border-radius: 100px;
-      font-size: 13px; font-weight: 600; color: var(--text-muted);
-    }
-    /* ===== HERO CHIPS ===== */
-.hero-chip {
-  display: inline-flex; 
-  align-items: center; 
-  gap: 7px;
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  padding: 7px 16px; 
-  border-radius: 100px;
-  font-size: 13px; 
-  font-weight: 600; 
-  color: var(--text-muted);
-}
-    .chip-dot { width:8px;height:8px;border-radius:50%; }
-
-    /* ===== QUOTE BOX ===== */
-    .quote-box {
-      border-left: 3px solid var(--primary);
-      padding: 14px 20px;
-      background: rgba(124,58,237,0.05);
-      border-radius: 0 12px 12px 0;
-      margin-bottom: 32px;
-      backdrop-filter: blur(8px);
-    }
-    body.dark .quote-box { background:rgba(124,58,237,0.1); }
-
-    /* ===== BUTTONS ===== */
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 14px 28px; border-radius: 14px;
-      background: linear-gradient(135deg, var(--primary), var(--primary-light));
-      color: #fff; font-weight: 700; font-size: 15px;
-      font-family: 'Sora', sans-serif;
-      box-shadow: 0 8px 24px rgba(124,58,237,0.3);
-      transition: transform 0.2s, box-shadow 0.2s;
-      text-decoration: none; border: none; cursor: pointer;
-    }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(124,58,237,0.45); }
-
-    .btn-ghost {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 14px 28px; border-radius: 14px;
-      background: var(--surface2);
-      border: 1px solid var(--border2);
-      color: var(--text); font-weight: 600; font-size: 15px;
-      font-family: 'Sora', sans-serif;
-      transition: all 0.2s; text-decoration: none; cursor: pointer;
-    }
-    .btn-ghost:hover { background: var(--surface); border-color: var(--primary); color: var(--primary); }
-
-    /* ===== HERO RIGHT (Profile Card) ===== */
-    .profile-showcase { position:relative; width:380px; height:460px; }
-    .ring {
-      position: absolute; top:50%; left:50%;
-      transform: translate(-50%,-50%);
-      border-radius: 50%;
-    }
-    .ring1 { width:380px;height:380px;border:1px dashed rgba(124,58,237,0.2);animation:spinSlow 25s linear infinite; }
-    .ring2 { width:310px;height:310px;border:1px dashed rgba(6,182,212,0.15);animation:spinSlow 18s linear infinite reverse; }
-    .glow-center {
-      position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-      width:300px;height:300px;
-      background:radial-gradient(circle,rgba(124,58,237,0.2),transparent 70%);
-      animation:glowPulse 3.5s ease-in-out infinite;
-    }
-    body:not(.dark) .glow-center { background:radial-gradient(circle,rgba(124,58,237,0.12),transparent 70%); }
-    .profile-card {
-      position:absolute; top:0; left:50%; transform:translateX(-50%);
-      width:260px; height:340px;
-      background: var(--surface);
-      border: 1px solid var(--border2);
-      border-radius: 24px;
-      box-shadow: 0 20px 60px rgba(124,58,237,0.15);
-      display:flex;flex-direction:column;align-items:center;justify-content:center;
-      padding: 24px; overflow:hidden;
-    }
-    body.dark .profile-card { background:rgba(26,21,53,0.9); }
-
-    .teacher-scene { width:190px;height:190px;margin-bottom:14px; }
-    .profile-name { font-family:'Sora',sans-serif;font-weight:800;font-size:14px;color:var(--text);text-align:center; }
-    .profile-prodi { font-size:11px;color:var(--text-muted);text-align:center;margin-top:4px; }
-    .profile-badges { display:flex;gap:6px;margin-top:10px; }
-    .p-badge {
-      background: rgba(124,58,237,0.12); border:1px solid rgba(124,58,237,0.25);
-      color:var(--primary); padding:3px 10px; border-radius:100px;
-      font-size:10px;font-weight:700;
-    }
-    body.dark .p-badge { color:#c4b5fd;background:rgba(124,58,237,0.2);border-color:rgba(124,58,237,0.4); }
-
-    .float-card {
-      position:absolute; background:var(--surface);
-      border:1px solid var(--border);
-      border-radius:14px;padding:12px 16px;
-      box-shadow:0 8px 24px rgba(0,0,0,0.08);
-      animation:floatY 4s ease-in-out infinite;
-    }
-    body.dark .float-card { background:rgba(26,21,53,0.95);box-shadow:0 8px 24px rgba(0,0,0,0.4); }
-    .fc1{bottom:80px;left:-20px;animation-delay:1s;}
-    .fc2{top:50px;right:-15px;animation-delay:2.5s;}
-    .fc3{bottom:20px;right:-10px;animation-delay:0s;}
-
-    /* ===== STATS ROW ===== */
-    .stats-row { display:flex;gap:0;margin-top:36px; }
-    .stat-item { text-align:center;padding:0 24px; }
-    .stat-item:first-child { padding-left:0; }
-    .stat-num { font-family:'Sora',sans-serif;font-weight:800;font-size:30px;line-height:1; }
-    .stat-lbl { font-size:11px;color:var(--text-muted);margin-top:4px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px; }
-    .stat-divider { width:1px;background:var(--border);align-self:stretch; }
-
-    /* ===== SCROLL INDICATOR ===== */
-    .scroll-ind {
-      position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
-      display:flex;flex-direction:column;align-items:center;gap:8px;
-      color:var(--text-muted);font-size:11px;font-weight:600;letter-spacing:1px;
-    }
-    .scroll-line {
-      width:1px;height:42px;
-      background:linear-gradient(to bottom,var(--primary),transparent);
-      animation:scaleY 2s ease-in-out infinite;
-    }
-    @keyframes scaleY {
-      0%{transform:scaleY(0);transform-origin:top;}
-      50%{transform:scaleY(1);transform-origin:top;}
-      100%{transform:scaleY(0);transform-origin:bottom;}
-    }
-
-    /* ===== SECTION LAYOUT ===== */
-    .section-pad { padding:88px 0; }
-    @media(max-width:768px){.section-pad{padding:64px 0;}}
-
+    .section-pad { padding: 100px 0 80px 0; }
+    
     .section-label {
-      display:inline-flex;align-items:center;gap:8px;
-      color:var(--primary);font-size:12px;font-weight:800;
-      text-transform:uppercase;letter-spacing:2.5px;margin-bottom:14px;
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--primary); font-size: 12px; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 2.5px; margin-bottom: 14px;
     }
-    .section-label::before { content:'';width:22px;height:2.5px;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:2px; }
+    .section-label::before { content: ''; width: 22px; height: 2.5px; background: linear-gradient(90deg, var(--primary), var(--accent)); border-radius: 2px; }
 
-    /* ===== BADGE ===== */
-    .chip-badge {
-      display:inline-flex;align-items:center;gap:6px;
-      padding:6px 16px;border-radius:100px;font-size:13px;font-weight:700;
-      background:rgba(124,58,237,0.1);border:1px solid rgba(124,58,237,0.2);
-      color:var(--primary);
-    }
-    body.dark .chip-badge { background:rgba(124,58,237,0.18);border-color:rgba(124,58,237,0.35);color:#c4b5fd; }
-
-    /* ===== DROPDOWN ===== */
-    .dropdown-menu {
-      opacity:0;visibility:hidden;transform:translateY(-8px);
-      transition:all 0.25s ease;
-      position:absolute;top:calc(100% + 8px);left:0;z-index:50;
-      background:var(--surface);border:1px solid var(--border);
-      border-radius:14px;padding:8px;width:200px;
-      box-shadow:0 16px 40px rgba(0,0,0,0.12);
-    }
-    .dropdown:hover .dropdown-menu { opacity:1;visibility:visible;transform:translateY(0); }
-    .dropdown-menu a {
-      display:block;padding:9px 14px;border-radius:8px;font-size:13px;font-weight:600;
-      color:var(--text-muted);text-decoration:none;transition:all 0.2s;
-    }
-    .dropdown-menu a:hover { background:rgba(124,58,237,0.08);color:var(--primary); }
-
-    /* ===== THEME TOGGLE ===== */
     .theme-btn {
-      width:42px;height:42px;border-radius:50%;
-      background:var(--surface2);border:1px solid var(--border);
-      display:flex;align-items:center;justify-content:center;
-      cursor:pointer;transition:all 0.3s;
-    }
-    .theme-btn:hover { background:rgba(124,58,237,0.1);border-color:var(--border2); }
-
-    /* ===== MASONRY ===== */
-    .masonry { columns:3;gap:1.5rem; }
-    @media(max-width:768px){.masonry{columns:1;}}
-    @media(min-width:769px) and (max-width:1024px){.masonry{columns:2;}}
-    .masonry > div { break-inside:avoid;margin-bottom:1.5rem; }
-
-    /* ===== FILTER BUTTONS ===== */
-    .filter-btn {
-      padding:9px 22px;border-radius:100px;font-size:13px;font-weight:700;
-      cursor:pointer;transition:all 0.2s;
-      background:var(--surface2);color:var(--text-muted);
-      border:1px solid var(--border);font-family:'Plus Jakarta Sans',sans-serif;
-    }
-    .filter-btn.active { background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;border-color:transparent;box-shadow:0 4px 14px rgba(124,58,237,0.3); }
-    .filter-btn:hover:not(.active) { border-color:var(--primary);color:var(--primary); }
-
-    /* ===== INPUT ===== */
-    input, textarea {
-      background:var(--surface2);color:var(--text);
-      border:1.5px solid var(--border);
-      transition:all 0.3s;font-family:'Plus Jakarta Sans',sans-serif;
-    }
-    input:focus, textarea:focus {
-      outline:none;border-color:var(--primary);
-      box-shadow:0 0 0 3px rgba(124,58,237,0.12);
-    }
-    input::placeholder, textarea::placeholder { color:var(--text-sub); }
-
-    /* ===== TIMELINE ===== */
-    .tl-item { position:relative;padding-left:28px; }
-    .tl-item::before { content:'';position:absolute;left:0;top:3px;width:13px;height:13px;border-radius:50%;background:var(--primary);border:3px solid var(--bg); }
-    .tl-item::after { content:'';position:absolute;left:5px;top:16px;width:2px;height:calc(100% + 16px);background:linear-gradient(to bottom,var(--primary),var(--accent)); }
-    .tl-item:last-child::after { display:none; }
-
-    /* ===== ARTEFAK CARDS ===== */
-    .artefak-thumb {
-      height:140px;display:flex;align-items:center;justify-content:center;
-      font-size:52px;border-radius:14px 14px 0 0;
-    }
-    .at-purple { background:linear-gradient(135deg,rgba(124,58,237,0.15),rgba(124,58,237,0.04)); }
-    .at-cyan { background:linear-gradient(135deg,rgba(6,182,212,0.15),rgba(6,182,212,0.04)); }
-    .at-amber { background:linear-gradient(135deg,rgba(245,158,11,0.15),rgba(245,158,11,0.04)); }
-    .at-green { background:linear-gradient(135deg,rgba(34,197,94,0.15),rgba(34,197,94,0.04)); }
-    .at-pink { background:linear-gradient(135deg,rgba(244,63,94,0.15),rgba(244,63,94,0.04)); }
-    .at-violet { background:linear-gradient(135deg,rgba(139,92,246,0.15),rgba(139,92,246,0.04)); }
-
-    .artefak-tag {
-      display:inline-block;background:rgba(124,58,237,0.1);color:var(--primary);
-      padding:3px 12px;border-radius:100px;font-size:11px;font-weight:700;margin-bottom:8px;
-      text-transform:capitalize;
-    }
-    body.dark .artefak-tag { background:rgba(124,58,237,0.2);color:#c4b5fd; }
-
-    /* ===== PENILAIAN ===== */
-    .nilai-box {
-      text-align:center;padding:16px;border-radius:14px;
-    }
-    .nb-primary { background:rgba(124,58,237,0.08); }
-    .nb-accent { background:rgba(6,182,212,0.08); }
-    body.dark .nb-primary { background:rgba(124,58,237,0.15); }
-    body.dark .nb-accent { background:rgba(6,182,212,0.12); }
-
-    .progress-bar {
-      width:100%;height:7px;border-radius:100px;
-      background:var(--surface2);overflow:hidden;
-    }
-    .progress-fill {
-      height:100%;border-radius:100px;
-      background:linear-gradient(90deg,var(--primary),var(--accent));
-      transition:width 1.2s ease;
+      width: 42px; height: 42px; border-radius: 50%;
+      background: var(--surface2); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: all 0.3s;
     }
 
-    /* ===== SIKLUS CARD ===== */
-    .siklus-card { border-radius:24px;padding:32px;transition:all 0.3s; }
-    .siklus-card.featured {
-      background:linear-gradient(135deg,rgba(124,58,237,0.08),rgba(6,182,212,0.05));
-      border:1px solid rgba(124,58,237,0.3) !important;
-    }
-    body.dark .siklus-card.featured {
-      background:linear-gradient(135deg,rgba(124,58,237,0.14),rgba(6,182,212,0.07));
-    }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .animate-fade-in { animation: fadeInUp 0.6s ease forwards; }
 
-    /* ===== FLOATING BTN ===== */
-    .fab {
-      position:fixed;bottom:32px;right:32px;z-index:99;
-      width:56px;height:56px;
-      background:linear-gradient(135deg,var(--primary),var(--accent));
-      border-radius:50%;display:flex;align-items:center;justify-content:center;
-      cursor:pointer;border:none;color:#fff;
-      box-shadow:0 8px 28px rgba(124,58,237,0.4);
-      transition:transform 0.2s;animation:floatY 3.5s ease-in-out infinite;
+    /* Carousel Custom Transitions */
+    .carousel-item {
+      opacity: 0;
+      transition: opacity 1.2s ease-in-out;
     }
-    .fab:hover { transform:scale(1.12); }
-
-    /* ===== MODAL ===== */
-    .modal-overlay {
-      position:fixed;inset:0;z-index:200;
-      background:rgba(0,0,0,0.5);backdrop-filter:blur(8px);
-      display:flex;align-items:center;justify-content:center;padding:20px;
+    .carousel-item.active {
+      opacity: 1;
     }
-    .modal-box {
-      background:var(--surface);border:1px solid var(--border);
-      border-radius:24px;max-width:500px;width:100%;
-      padding:36px;max-height:88vh;overflow-y:auto;position:relative;
-      box-shadow:0 32px 80px rgba(0,0,0,0.2);
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media(max-width:900px){
-      .hero-right-wrap{display:none!important;}
-    }
-    @media(max-width:640px){
-      .stats-row{gap:0;}
-      .stat-item{padding:0 14px;}
-      .nav-links-wrap{display:none;}
-    }
-
-    /* ===== GALERI ===== */
-    .galeri-item {
-      border-radius:18px;overflow:hidden;display:flex;
-      align-items:center;justify-content:center;font-size:52px;
-      transition:transform 0.3s;margin-bottom:1.5rem;
-    }
-    .galeri-item:hover{transform:scale(1.02);}
-
-    /* ===== FOOTER ===== */
-    footer { background:var(--bg2);border-top:1px solid var(--border); }
-    body.dark footer { background:#0a0816; }
-    #hero .hero-title,
-#hero .hero-chip,
-#hero .hero-pill,
-#hero .quote-box p,
-#hero .stat-num,
-#hero .stat-lbl {
-  color: white !important;
-}
-
-#hero .hero-chip,
-#hero .hero-pill,
-#hero .quote-box,
-#hero .stats-row {
-  background: rgba(255,255,255,0.08) !important;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.15) !important;
-}
-
-#hero .quote-box {
-  border-left: 3px solid white !important;
-}
   </style>
 </head>
 <body class="font-body">
 
 <!-- ===== NAVBAR ===== -->
-<nav id="navbar" class="fixed top-0 left-0 right-0 z-50">
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-20">
 
       <!-- Logo -->
-      <a href="#hero" class="flex items-center gap-2 text-decoration-none">
+      <a href="#" class="flex items-center gap-2">
         <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:linear-gradient(135deg,var(--primary),var(--accent));">
           <i data-lucide="graduation-cap" class="w-5 h-5 text-white"></i>
         </div>
         <span class="font-display font-bold text-xl" style="color:var(--text);">E-Portfolio</span>
       </a>
 
-      <!-- Nav Links -->
-      <div class="nav-links-wrap hidden md:flex items-center gap-7">
-        <a href="#hero" class="nav-link text-sm">Beranda</a>
-        <a href="#profil" class="nav-link text-sm">Profil</a>
-
-        <div class="dropdown relative">
-          <button class="nav-link text-sm flex items-center gap-1">Portofolio <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i></button>
-          <div class="dropdown-menu">
-            <a href="#artefak">RPP &amp; Modul</a>
-            <a href="#artefak">Media Pembelajaran</a>
-            <a href="#artefak">LKPD &amp; Hasil Kerja</a>
-            <a href="#artefak">Dokumentasi PPL</a>
-          </div>
-        </div>
-
-        <div class="dropdown relative">
-          <button class="nav-link text-sm flex items-center gap-1">Penilaian <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i></button>
-          <div class="dropdown-menu">
-            <a href="#penilaian">Siklus 1</a>
-            <a href="#penilaian">Siklus 2</a>
-            <a href="#penilaian">Siklus 3</a>
-            <a href="#penilaian">Evaluasi GP &amp; DPL</a>
-          </div>
-        </div>
-
-        <a href="#refleksi" class="nav-link text-sm">Refleksi</a>
-
-        <div class="dropdown relative">
-          <button class="nav-link text-sm flex items-center gap-1">Lampiran <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i></button>
-          <div class="dropdown-menu">
-            <a href="#lampiran">Instrumen Penilaian</a>
-            <a href="#lampiran">PDF Perangkat</a>
-            <a href="#lampiran">Sertifikat &amp; Dokumen</a>
-          </div>
-        </div>
-
-        <a href="#kontak" class="nav-link text-sm">Kontak</a>
+      <!-- 5 Tombol Navigasi Utama -->
+      <div class="hidden md:flex items-center gap-7">
+        <a href="#" class="nav-link text-sm active">Profil Mahasiswa</a>
+        <a href="lokasi.html" class="nav-link text-sm">Lokasi LPTK</a>
+        <a href="portofolio1.html" class="nav-link text-sm">Portfolio 1</a>
+        <a href="portofolio2.html" class="nav-link text-sm">Portfolio 2</a>
+        <a href="portofolio3.html" class="nav-link text-sm">Portfolio 3</a>
       </div>
 
       <div class="flex items-center gap-3">
@@ -633,7 +170,7 @@
         <button id="themeBtn" class="theme-btn" onclick="toggleTheme()">
           <i id="themeIcon" data-lucide="moon" class="w-5 h-5" style="color:var(--text-muted);"></i>
         </button>
-        <!-- Mobile menu -->
+        <!-- Mobile Menu Button -->
         <button class="md:hidden theme-btn" onclick="toggleMobileMenu()">
           <i data-lucide="menu" class="w-5 h-5" style="color:var(--text-muted);"></i>
         </button>
@@ -641,803 +178,362 @@
 
     </div>
   </div>
-  <!-- Mobile menu -->
-  <div id="mobileMenu" class="hidden md:hidden border-t px-4 py-4 space-y-2" style="border-color:var(--border);background:var(--surface);">
-    <a href="#hero" class="block py-2 text-sm font-semibold" style="color:var(--text-muted);">Beranda</a>
-    <a href="#profil" class="block py-2 text-sm font-semibold" style="color:var(--text-muted);">Profil</a>
-    <a href="#artefak" class="block py-2 text-sm font-semibold" style="color:var(--text-muted);">Portofolio</a>
-    <a href="#penilaian" class="block py-2 text-sm font-semibold" style="color:var(--text-muted);">Penilaian</a>
-    <a href="#refleksi" class="block py-2 text-sm font-semibold" style="color:var(--text-muted);">Refleksi</a>
-    <a href="#kontak" class="block py-2 text-sm font-semibold" style="color:var(--text-muted);">Kontak</a>
+
+  <!-- Mobile Menu Links -->
+  <div id="mobileMenu" class="hidden md:hidden border-t px-4 py-4 space-y-2" style="border-color:var(--border); background:var(--surface);">
+    <a href="#" class="block py-2 text-sm font-semibold text-purple-600">Profil Mahasiswa</a>
+    <a href="#" class="block py-2 text-sm font-semibold" style="color:var(--text-muted);">Lokasi LPTK</a>
+    <a href="#portfolio-1" class="block py-2 text-sm font-semibold" style="color:var(--text-muted);">Portfolio 1</a>
+    <a href="#portfolio-2" class="block py-2 text-sm font-semibold" style="color:var(--text-muted);">Portfolio 2</a>
+    <a href="#portfolio-3" class="block py-2 text-sm font-semibold" style="color:var(--text-muted);">Portfolio 3</a>
   </div>
 </nav>
 
-<!-- ===== HERO ===== -->
-<!-- ===== HOME / HERO SECTION ===== -->
+<!-- ===== HERO HERO SECTION (KORASEL BACKGROUND UTUH) ===== -->
 <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
-
-  <!-- Background Image -->
-  <div class="absolute inset-0">
-    <img 
-      src="https://picsum.photos/1920/1080" 
-      alt="Background"
-      class="w-full h-full object-cover"
-    >
-
-    <!-- Overlay -->
-    <div class="absolute inset-0 bg-black/60"></div>
+  
+  <!-- Carousel Image Wrapper -->
+  <div class="absolute inset-0 z-0">
+    <!-- Gambar 1 -->
+    <div class="carousel-item active absolute inset-0 bg-cover bg-center" style="background-image: url('images/bgporto.jpeg');"></div>
+    <!-- Gambar 2 (Silakan ganti path gambarnya nanti) -->
+    <div class="carousel-item absolute inset-0 bg-cover bg-center" style="background-image: url('images/bgporto2.jpeg');"></div>
+    <!-- Gambar 3 (Silakan ganti path gambarnya nanti) -->
+    <div class="carousel-item absolute inset-0 bg-cover bg-center" style="background-image: url('images/bg3.jpeg');"></div>
+    
+    <!-- Gelap Overlay Tunggal -->
+    <div class="absolute inset-0 bg-black/65 backdrop-blur-[2px]"></div>
   </div>
 
-  <!-- Content -->
-  <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
-
-    <div class="grid lg:grid-cols-2 gap-14 items-center">
-
-      <!-- LEFT CONTENT -->
-      <div class="text-white">
-
-        <!-- Small Label -->
+  <!-- Content Wrap -->
+  <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full pt-16">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      
+      <!-- Left Wrap: Text Content -->
+      <div class="text-white animate-fade-in">
+        <!-- Small Pill Label -->
         <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6">
           <div class="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></div>
-          
+          <span class="text-xs font-bold tracking-wider uppercase text-white/90">PPG Prajabatan 2026</span>
         </div>
 
-        <!-- Big Portfolio Text -->
-        <h1 class="font-black leading-none mb-4">
-          <span class="block text-6xl md:text-8xl text-white/90">
-            PORTFOLIO
-          </span>
-
-          <span class="block text-4xl md:text-6xl mt-3 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+        <!-- Big Portfolio Headline -->
+        <h1 class="font-display font-black leading-none mb-4">
+          <span class="block text-5xl md:text-7xl text-white/90 tracking-tight">PORTFOLIO</span>
+          <span class="block text-3xl md:text-5xl mt-3 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent font-extrabold">
             Dwi Wahyu Nugroho
           </span>
         </h1>
 
-        <!-- Description -->
-        <p class="max-w-xl text-lg text-gray-200 leading-relaxed mb-8">
-          Calon Guru Profesional Pendidikan Informatika yang berfokus pada
-          pembelajaran kreatif, inovatif, dan berbasis teknologi.
+        <!-- Short Description -->
+        <p class="max-w-xl text-sm md:text-base text-gray-200 leading-relaxed mb-8 opacity-90">
+          Calon Guru Profesional Pendidikan Informatika yang berfokus pada pembelajaran kreatif, inovatif, dan eksplorasi teknologi berbasis nilai karakter murid.
         </p>
 
-        <!-- Button -->
+        <!-- Call to Actions -->
         <div class="flex flex-wrap gap-4">
-          <a href="#profil"
-            class="px-8 py-4 rounded-2xl bg-gradient-to-r from-purple-600 to-cyan-500 font-bold text-white shadow-2xl hover:scale-105 transition duration-300">
+          <a href="#biodata" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-purple-600 to-cyan-500 font-bold text-sm text-white shadow-lg shadow-purple-900/30 hover:scale-105 transition-all duration-300">
             Tentang Saya
           </a>
-
-          <a href="#artefak"
-            class="px-8 py-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 font-semibold text-white hover:bg-white/20 transition">
-            Lihat Portofolio
+          <a href="#keunikan-cilacap" class="px-7 py-3.5 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 font-semibold text-sm text-white hover:bg-white/20 transition-all">
+            Eksplorasi Cilacap
           </a>
         </div>
-
       </div>
 
-      <!-- RIGHT CONTENT -->
-      <div class="relative flex justify-center">
+      <!-- Right Wrap: Decorative Frame & Image -->
+      <div class="relative flex justify-center lg:justify-end animate-fade-in" style="animation-delay: 0.2s;">
+        <!-- Glowing Center Aura -->
+        <div class="absolute w-[280px] h-[280px] bg-purple-500/20 rounded-full blur-3xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
 
-        <!-- Glow -->
-        <div class="absolute w-[350px] h-[350px] bg-purple-500/30 rounded-full blur-3xl"></div>
+        <!-- Rotating Outer Line Frame -->
+        <div class="absolute w-[340px] h-[340px] border border-white/15 rounded-full animate-spin hidden sm:block top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" style="animation-duration: 25s;"></div>
 
-        <!-- Circle Border -->
-        <div class="absolute w-[420px] h-[420px] border border-white/20 rounded-full animate-spin"
-          style="animation-duration:20s;">
-        </div>
-
-        <!-- Profile Card -->
-        <div class="relative z-10">
-
-          <!-- FOTO -->
-          <div class="w-[320px] h-[420px] rounded-[40px] overflow-hidden border border-white/20 bg-white/10 backdrop-blur-md shadow-2xl">
-
-            <!-- Ganti gambar nanti -->
-            <img
-              src="images/DSC02661.jpg"
-              alt="Profile"
-              class="w-full h-full object-cover"
-            >
+        <!-- Profile Showcase Main Card -->
+        <div class="relative z-10 w-[270px] h-[360px] rounded-[32px] overflow-hidden border border-white/20 bg-white/10 backdrop-blur-md shadow-2xl p-3">
+          <img src="images/DSC02661.jpg" alt="Foto Profil Utama" class="w-full h-full object-cover rounded-[22px] bg-slate-800" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <!-- Backup icon if image file not found -->
+          <div class="absolute inset-0 hidden flex-col items-center justify-center text-white text-6xl">👨‍🏫</div>
+          
+          <!-- Embedded Badge Info -->
+          <div class="absolute right-4 top-6 bg-gradient-to-r from-purple-600 to-cyan-500 text-white px-4 py-2 rounded-xl shadow-xl border border-white/10">
+            <p class="text-[9px] font-bold uppercase opacity-75 tracking-wider">Kompetensi</p>
+            <h4 class="font-display font-black text-sm">Informatika</h4>
           </div>
-
-          <!-- Floating Badge -->
-        
-
-          <!-- Floating Badge 2 -->
-          <div class="absolute -right-8 top-10 bg-gradient-to-r from-purple-600 to-cyan-500 text-white px-5 py-3 rounded-2xl shadow-2xl">
-            <p class="text-xs font-semibold opacity-80">Bidang</p>
-            <h3 class="font-black text-lg">Informatika</h3>
-          </div>
-
         </div>
-
       </div>
 
     </div>
-
   </div>
 
-</section>
-
-<!-- ===== UNIVERSITAS ===== -->
-<section class="section-pad" style="background:var(--bg2);">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16 animate-fade-in">
-      <div class="section-label" style="justify-content:center;">Institusi Pendidikan</div>
-      <h2 class="font-display font-bold text-4xl md:text-5xl mb-4" style="color:var(--text);">
-        Universitas <span class="grad-text">Muhammadiyah Surakarta</span>
-      </h2>
-      <p class="text-lg max-w-2xl mx-auto" style="color:var(--text-muted);">Institusi pendidikan berkualitas dengan komitmen mengembangkan calon pendidik profesional</p>
-    </div>
-    <div class="grid md:grid-cols-2 gap-12 items-center">
-      <div class="animate-fade-in delay-100">
-        <div class="card rounded-2xl p-8">
-          <div class="w-16 h-16 rounded-xl flex items-center justify-center mb-6" style="background:linear-gradient(135deg,var(--primary),var(--accent));">
-            <i data-lucide="building" class="w-8 h-8 text-white"></i>
-          </div>
-          <h3 id="universityName" class="font-display font-bold text-2xl mb-4" style="color:var(--text);">Universitas Muhammadiyah Surakarta</h3>
-          <p class="mb-6 leading-relaxed text-sm" style="color:var(--text-muted);">Universitas Muhammadiyah Surakarta adalah institusi pendidikan terkemuka yang berkomitmen untuk menghasilkan pendidik profesional yang inovatif, reflektif, dan berpihak pada murid. UMS menawarkan program-program berkualitas tinggi yang relevan dengan kebutuhan zaman.</p>
-          <div class="grid grid-cols-2 gap-4">
-            <div class="p-4 rounded-xl nb-primary">
-              <p class="text-xs mb-1" style="color:var(--text-muted);">Program Studi</p>
-              <p class="text-2xl font-bold grad-text font-display">50+</p>
-            </div>
-            <div class="p-4 rounded-xl nb-accent">
-              <p class="text-xs mb-1" style="color:var(--text-muted);">Mahasiswa</p>
-              <p class="text-2xl font-bold font-display" style="color:var(--accent);">40K+</p>
-            </div>
-            <div class="p-4 rounded-xl nb-primary">
-              <p class="text-xs mb-1" style="color:var(--text-muted);">Tahun Berdiri</p>
-              <p class="text-2xl font-bold grad-text font-display">1958</p>
-            </div>
-            <div class="p-4 rounded-xl nb-accent">
-              <p class="text-xs mb-1" style="color:var(--text-muted);">Akreditasi</p>
-              <p class="text-2xl font-bold font-display" style="color:var(--accent);">Unggul</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="animate-fade-in delay-200 space-y-4">
-        <div class="card rounded-2xl p-6">
-          <h4 class="font-display font-bold mb-2 flex items-center gap-2" style="color:var(--text);">
-            <i data-lucide="target" class="w-5 h-5" style="color:var(--primary);"></i> Visi
-          </h4>
-          <p class="text-sm leading-relaxed" style="color:var(--text-muted);">Menjadi universitas unggul dalam mengembangkan profesional pendidik yang inovatif dan berdaya saing global.</p>
-        </div>
-        <div class="card rounded-2xl p-6">
-          <h4 class="font-display font-bold mb-2 flex items-center gap-2" style="color:var(--text);">
-            <i data-lucide="zap" class="w-5 h-5" style="color:var(--accent);"></i> Program PPG
-          </h4>
-          <p class="text-sm leading-relaxed" style="color:var(--text-muted);">Program Pendidikan Profesi Guru dirancang untuk menghasilkan guru profesional dengan kompetensi pedagogik, profesional, sosial, dan personal yang kuat.</p>
-        </div>
-        <div class="card rounded-2xl p-6">
-          <h4 class="font-display font-bold mb-2 flex items-center gap-2" style="color:var(--text);">
-            <i data-lucide="award" class="w-5 h-5" style="color:var(--gold);"></i> Keunggulan
-          </h4>
-          <p class="text-sm leading-relaxed" style="color:var(--text-muted);">Fasilitas modern, dosen berpengalaman, kurikulum berbasis industri, dan networking luas dengan institusi pendidikan nasional dan internasional.</p>
-        </div>
-      </div>
-    </div>
+  <!-- Indikator Titik Carousel (Dots Indicator) -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2.5">
+    <button onclick="setSlide(0)" class="carousel-dot w-3 h-3 rounded-full bg-white transition-all duration-300"></button>
+    <button onclick="setSlide(1)" class="carousel-dot w-3 h-3 rounded-full bg-white/40 transition-all duration-300"></button>
+    <button onclick="setSlide(2)" class="carousel-dot w-3 h-3 rounded-full bg-white/40 transition-all duration-300"></button>
   </div>
 </section>
 
-<!-- ===== LOKASI ===== -->
-<section id="lokasi" class="section-pad" style="background:var(--bg);">
+<!-- ===== MAIN PROFILE CONTENT ===== -->
+<main id="biodata" class="section-pad">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
     <div class="text-center mb-16 animate-fade-in">
-      <div class="section-label" style="justify-content:center;">Lokasi</div>
-      <h2 class="font-display font-bold text-4xl md:text-5xl" style="color:var(--text);">Lokasi <span class="grad-text">Kampus</span></h2>
-    </div>
-    <div class="grid md:grid-cols-2 gap-8">
-      <div class="animate-fade-in delay-100 rounded-2xl overflow-hidden shadow-lg" style="height:400px;border:1px solid var(--border);">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.0!2d110.775!3d-7.556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a158600000001%3A0x1!2sUniversitas%20Muhammadiyah%20Surakarta!5e0!3m2!1sid!2sid!4v1234567890" width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"></iframe>
-      </div>
-      <div class="animate-fade-in delay-200 space-y-6">
-        <div class="card rounded-2xl p-8">
-          <h3 class="font-display font-bold text-xl mb-4 flex items-center gap-3" style="color:var(--text);">
-            <div class="w-11 h-11 rounded-xl flex items-center justify-center nb-primary">
-              <i data-lucide="map-pin" class="w-5 h-5" style="color:var(--primary);"></i>
-            </div> Alamat Kampus
-          </h3>
-          <p id="campusAddress" class="mb-4 leading-relaxed" style="color:var(--text-muted);">Jl. A. Yani No.157, Kartasura, Sukoharjo, Jawa Tengah 57102, Indonesia</p>
-          <div class="flex flex-wrap gap-2 mb-5">
-            <div class="chip-badge text-sm"><i data-lucide="phone" class="w-3.5 h-3.5"></i> (0271) 717-417</div>
-            <div class="chip-badge text-sm"><i data-lucide="mail" class="w-3.5 h-3.5"></i> info@ums.ac.id</div>
-          </div>
-          <a href="https://www.google.com/maps/search/Universitas+Muhammadiyah+Surakarta" target="_blank" class="btn-primary text-sm inline-flex">
-            <i data-lucide="external-link" class="w-4 h-4"></i> Lihat di Google Maps
-          </a>
-        </div>
-        <div class="card rounded-2xl p-6">
-          <h3 class="font-display font-bold text-base mb-3 flex items-center gap-2" style="color:var(--text);">
-            <i data-lucide="landmark" class="w-5 h-5" style="color:var(--primary);"></i> Landmark Sekitar
-          </h3>
-          <ul class="space-y-2 text-sm" style="color:var(--text-muted);">
-            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 flex-shrink-0" style="color:var(--primary);"></i> Kota Solo (8km)</li>
-            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 flex-shrink-0" style="color:var(--primary);"></i> Bandara Adi Soemarmo (3km)</li>
-            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 flex-shrink-0" style="color:var(--primary);"></i> Stasiun Balapan (10km)</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== PROFIL ===== -->
-<section id="profil" class="section-pad" style="background:var(--bg2);">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16 animate-fade-in">
-      <div class="section-label" style="justify-content:center;">Tentang Saya</div>
+      <div class="section-label" style="justify-content:center;">Biodata Diri</div>
       <h2 class="font-display font-bold text-4xl md:text-5xl" style="color:var(--text);">Profil <span class="grad-text">Mahasiswa</span></h2>
+      <p class="mt-3 text-sm md:text-base max-w-2xl mx-auto" style="color:var(--text-muted);">Dokumentasi identitas, asal-usul keunikan daerah, dan visi strategis dalam program Pendidikan Profesi Guru.</p>
     </div>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="animate-fade-in delay-100">
-        <div class="card rounded-2xl p-8 text-center">
-          <div class="w-44 h-44 mx-auto rounded-2xl mb-6 flex items-center justify-center text-7xl" style="background:linear-gradient(135deg,rgba(124,58,237,0.12),rgba(6,182,212,0.08));border:1px solid var(--border2);">
-            👨‍🏫
+
+    <!-- Profile Grid Layout -->
+    <div class="grid md:grid-cols-3 gap-8 items-start mb-20">
+      
+      <!-- Left Column: Identity Card -->
+      <div class="animate-fade-in space-y-6">
+        <div class="card rounded-2xl p-6 text-center flex flex-col items-center">
+          <!-- Avatar Frame -->
+          <div class="w-40 h-40 rounded-2xl mb-5 overflow-hidden p-1 bg-gradient-to-tr from-purple-500 to-cyan-400">
+            <img src="images/DSC02668.jpg" alt="Foto Dwi Wahyu Nugroho" class="w-full h-full object-cover rounded-xl bg-slate-200">
           </div>
-          <h3 id="profileName" class="font-display font-bold text-xl mb-1" style="color:var(--text);">Dwi Wahyu Nugroho</h3>
-          <p class="font-semibold text-sm mb-4" style="color:var(--primary);">Pendidikan Informatika</p>
-          <div class="space-y-2 text-sm" style="color:var(--text-muted);">
-            <div class="flex items-center justify-center gap-2">
-              <i data-lucide="map-pin" class="w-4 h-4"></i>
-              <span id="profileOrigin">Surakarta, Jawa Tengah</span>
+          
+          <!-- Identity Text -->
+          <h3 class="font-display font-bold text-xl mb-1" style="color:var(--text);">Dwi Wahyu Nugroho</h3>
+          <p class="font-semibold text-xs px-3 py-1 rounded-full mb-6" style="color:var(--primary); background: rgba(124,58,237,0.1);">
+            Mahasiswa PPG Prajabatan
+          </p>
+          
+          <!-- Metadata List -->
+          <div class="space-y-3.5 text-sm w-full text-left border-t pt-5" style="border-color: var(--border2); color:var(--text-muted);">
+            <div class="flex items-center gap-3">
+              <i data-lucide="user-check" class="w-4.5 h-4.5 text-purple-500"></i>
+              <span>Bidang: Pendidikan Informatika</span>
             </div>
-            <div class="flex items-center justify-center gap-2">
-              <i data-lucide="calendar" class="w-4 h-4"></i>
-              <span>Angkatan 2025</span>
+            <div class="flex items-center gap-3">
+              <i data-lucide="map-pin" class="w-4.5 h-4.5 text-cyan-500"></i>
+              <span>Asal: Cilacap, Jawa Tengah</span>
             </div>
-            <div class="flex items-center justify-center gap-2">
-              <i data-lucide="briefcase" class="w-4 h-4"></i>
-              <span>PPG Prajabatan</span>
+            <div class="flex items-center gap-3">
+              <i data-lucide="building-2" class="w-4.5 h-4.5 text-amber-500"></i>
+              <span>LPTK: Universitas Muhammadiyah Surakarta</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <i data-lucide="calendar" class="w-4.5 h-4.5 text-emerald-500"></i>
+              <span>Tahun Akademik: 2026</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Academic Tracker Mini-Card -->
+        <div class="card rounded-2xl p-6">
+          <h4 class="font-display font-bold text-sm mb-4 flex items-center gap-2" style="color:var(--text);">
+            <i data-lucide="history" class="w-4 h-4 text-cyan-500"></i> Rekam Akademik
+          </h4>
+          <div class="space-y-4 relative border-l-2 ml-2 pl-4" style="border-color: var(--border2);">
+            <div class="relative">
+              <div class="absolute -left-[21px] top-1 w-2 h-2 rounded-full bg-cyan-400"></div>
+              <p class="font-bold text-xs" style="color:var(--text);">2021 – 2025</p>
+              <p class="text-xs" style="color:var(--text-muted);">S1 Informatika, Universitas Amikom Purwokerto</p>
+            </div>
+            <div class="relative">
+              <div class="absolute -left-[21px] top-1 w-2 h-2 rounded-full bg-purple-500"></div>
+              <p class="font-bold text-xs" style="color:var(--text);">2026 – Sekarang</p>
+              <p class="text-xs" style="color:var(--text-muted);">PPG Prajabatan, Universitas Muhammadiyah Surakarta</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="md:col-span-2 space-y-5 animate-fade-in delay-200">
-        <div class="card rounded-2xl p-7">
-          <h3 class="font-display font-bold mb-3 flex items-center gap-2" style="color:var(--text);">
-            <i data-lucide="heart" class="w-5 h-5" style="color:var(--gold);"></i> Motivasi Menjadi Guru
-          </h3>
-          <p class="leading-relaxed text-sm" style="color:var(--text-muted);">Sejak kecil, saya melihat guru sebagai pembentuk masa depan. Mereka tidak hanya mengajar, tetapi menginspirasi, mendorong, dan percaya pada potensi setiap murid. Pengalaman belajar yang bermakna telah membawa saya ke keputusan untuk menjadi guru profesional yang mampu menciptakan pembelajaran yang mengubah hidup.</p>
-        </div>
-        <div class="card rounded-2xl p-7">
-          <h3 class="font-display font-bold mb-3 flex items-center gap-2" style="color:var(--text);">
-            <i data-lucide="brain" class="w-5 h-5" style="color:var(--primary);"></i> Filosofi Pendidikan
-          </h3>
-          <p class="leading-relaxed text-sm" style="color:var(--text-muted);">Saya percaya bahwa setiap murid memiliki potensi unik yang perlu digali dan dikembangkan. Pembelajaran terbaik adalah yang melibatkan murid secara aktif, menghubungkan konsep dengan kehidupan nyata, dan menciptakan lingkungan yang aman untuk bertanya, bereksperimen, dan tumbuh.</p>
-        </div>
-        <div class="card rounded-2xl p-7">
-          <h3 class="font-display font-bold mb-4 flex items-center gap-2" style="color:var(--text);">
-            <i data-lucide="milestone" class="w-5 h-5" style="color:var(--accent);"></i> Perjalanan Akademik
-          </h3>
+
+      <!-- Right Column: Narrative & Quote -->
+      <div class="md:col-span-2 space-y-6 flex flex-col justify-between h-full">
+        <div class="card rounded-2xl p-8 flex flex-col justify-between h-full space-y-8">
+          
+          <!-- Narrative Core -->
           <div class="space-y-5">
-            <div class="tl-item">
-              <p class="font-bold text-sm" style="color:var(--text);">2021 – 2025</p>
-              <p class="text-sm" style="color:var(--text-muted);">S1 Pendidikan Informatika, Universitas Muhammadiyah Surakarta</p>
-            </div>
-            <div class="tl-item">
-              <p class="font-bold text-sm" style="color:var(--text);">2025 – 2026</p>
-              <p class="text-sm" style="color:var(--text-muted);">PPG Prajabatan, Universitas Muhammadiyah Surakarta</p>
-            </div>
+            <h3 class="font-display font-bold text-xl mb-2 flex items-center gap-2" style="color:var(--text);">
+              <i data-lucide="file-text" class="w-5 h-5" style="color:var(--primary);"></i> Narasi Profil
+            </h3>
+            
+            <!-- Asal & Keunikan Daerah -->
+            <p class="leading-relaxed text-sm text-justify md:text-base" style="color:var(--text-muted); text-indent: 2rem;">
+              Perkenalkan, nama saya <strong>Dwi Wahyu Nugroho</strong>. Saya lahir dan dibesarkan di <strong>Cilacap</strong>, sebuah kabupaten di pesisir selatan Jawa Tengah yang menyimpan keunikan alam serta sejarah yang kuat. Berbatasan langsung dengan riak ombak Samudra Hindia, daerah asal saya dikenal luas karena keberadaan pulau ikonik berlapis sejarah, yaitu <strong>Pulau Nusakambangan</strong>. Karakter geografis yang tegas and tangguh dari lingkungan pesisir ini secara tidak langsung menanamkan nilai kedisiplinan, ketahanan mental, serta semangat juang yang tinggi dalam diri saya untuk terus melangkah maju menjelajahi cakrawala keilmuan yang baru.
+            </p>
+            
+            <!-- Inspirasi & Tujuan Menjadi Guru Profesional -->
+            <p class="leading-relaxed text-sm text-justify md:text-base" style="color:var(--text-muted); text-indent: 2rem;">
+              Perjalanan dinamika kehidupan di era modern mempertemukan saya dengan pesatnya arus perkembangan teknologi informasi. Saya terinspirasi oleh pemikiran bahwa penguasaan teknologi digital adalah kunci utama akselerasi kemajuan bangsa di masa depan. Berlandaskan motivasi tersebut, tujuan hidup saya mengkristal dengan mantap, yaitu mendedikasikan diri menjadi seorang <strong>Guru Profesional di bidang Informatika</strong>. Melalui bekal ilmu teknologi dan pengalaman berharga dalam program Pendidikan Profesi Guru (PPG) ini, saya berkomitmen penuh untuk menghadirkan iklim pembelajaran kreatif, interaktif, berbasis nilai karakter, serta berpihak sepenuhnya kepada kodrat perkembangan murid.
+            </p>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+          
+          <!-- Quote Box Segment -->
+          <div class="p-6 rounded-xl border-l-4 italic text-sm md:text-base relative overflow-hidden" style="background:linear-gradient(90deg, rgba(124,58,237,0.06), rgba(6,182,212,0.02)); border-color:var(--primary); color:var(--text);">
+            <div class="absolute right-2 bottom-0 text-7xl opacity-5 font-serif select-none">”</div>
+            <p class="relative z-10 leading-relaxed" style="color:var(--text);">
+              "Teknologi hanyalah sebuah alat. Namun dalam memotivasi anak-anak dan membuat mereka bekerja sama, gurulah yang paling utama."
+            </p>
+            <span class="block text-xs font-semibold mt-2 not-italic text-right" style="color:var(--primary);">— Bill Gates</span>
+          </div>
 
-<!-- ===== VISI ===== -->
-<section id="visi" class="section-pad" style="background:var(--bg);">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16 animate-fade-in">
-      <div class="section-label" style="justify-content:center;">Arah Profesional</div>
-      <h2 class="font-display font-bold text-4xl md:text-5xl" style="color:var(--text);">Visi Guru <span class="grad-text">Profesional</span></h2>
-    </div>
-    <div class="grid md:grid-cols-2 gap-8 mb-12">
-      <div class="card rounded-2xl p-8 animate-fade-in delay-100">
-        <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 nb-primary">
-          <i data-lucide="eye" class="w-7 h-7" style="color:var(--primary);"></i>
-        </div>
-        <h3 class="font-display font-bold text-2xl mb-4" style="color:var(--text);">Visi Saya</h3>
-        <p id="visionStatement" class="leading-relaxed text-sm mb-5" style="color:var(--text-muted);">Menjadi guru informatika profesional yang inspiratif, inovatif, dan berpihak pada murid, mampu menciptakan pembelajaran bermakna yang mempersiapkan generasi masa depan untuk menjadi pemikir kritis dan problem solver.</p>
-        <div class="chip-badge"><i data-lucide="star" class="w-4 h-4"></i> Inspiratif · Inovatif · Berpihak Murid</div>
-      </div>
-      <div class="space-y-4 animate-fade-in delay-200">
-        <div class="card rounded-2xl p-6">
-          <h4 class="font-display font-bold mb-3 flex items-center gap-2" style="color:var(--text);">
-            <i data-lucide="target" class="w-5 h-5" style="color:var(--gold);"></i> Misi Utama
-          </h4>
-          <ul class="space-y-2 text-sm" style="color:var(--text-muted);">
-            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 flex-shrink-0 mt-0.5" style="color:var(--primary);"></i> Merancang pembelajaran diferensiasi dan kontekstual</li>
-            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 flex-shrink-0 mt-0.5" style="color:var(--primary);"></i> Mengintegrasikan teknologi dalam pembelajaran</li>
-            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 flex-shrink-0 mt-0.5" style="color:var(--primary);"></i> Mengembangkan kompetensi secara berkelanjutan</li>
-          </ul>
-        </div>
-        <div class="card rounded-2xl p-6">
-          <h4 class="font-display font-bold mb-3 flex items-center gap-2" style="color:var(--text);">
-            <i data-lucide="zap" class="w-5 h-5" style="color:var(--accent);"></i> Kompetensi Inti
-          </h4>
-          <ul class="space-y-2 text-sm" style="color:var(--text-muted);">
-            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 flex-shrink-0 mt-0.5" style="color:var(--accent);"></i> Pedagogik: Strategi pembelajaran efektif</li>
-            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 flex-shrink-0 mt-0.5" style="color:var(--accent);"></i> Profesional: Penguasaan bidang studi mendalam</li>
-            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 flex-shrink-0 mt-0.5" style="color:var(--accent);"></i> Sosial &amp; Personal: Relasi humanis</li>
-          </ul>
         </div>
       </div>
+
     </div>
 
-    <!-- Karakter -->
-    <div class="animate-fade-in">
-      <h3 class="font-display font-bold text-2xl text-center mb-8" style="color:var(--text);">Karakter Guru yang Ingin Dicapai</h3>
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-        <div class="card rounded-2xl p-5 text-center">
-          <div class="w-12 h-12 mx-auto rounded-xl nb-primary flex items-center justify-center mb-3">
-            <i data-lucide="palette" class="w-6 h-6" style="color:var(--primary);"></i>
-          </div>
-          <p class="font-bold text-sm" style="color:var(--text);">Kreatif</p>
-        </div>
-        <div class="card rounded-2xl p-5 text-center">
-          <div class="w-12 h-12 mx-auto rounded-xl nb-accent flex items-center justify-center mb-3">
-            <i data-lucide="rocket" class="w-6 h-6" style="color:var(--accent);"></i>
-          </div>
-          <p class="font-bold text-sm" style="color:var(--text);">Inovatif</p>
-        </div>
-        <div class="card rounded-2xl p-5 text-center">
-          <div class="w-12 h-12 mx-auto rounded-xl nb-primary flex items-center justify-center mb-3">
-            <i data-lucide="brain" class="w-6 h-6" style="color:var(--primary);"></i>
-          </div>
-          <p class="font-bold text-sm" style="color:var(--text);">Reflektif</p>
-        </div>
-        <div class="card rounded-2xl p-5 text-center">
-          <div class="w-12 h-12 mx-auto rounded-xl flex items-center justify-center mb-3" style="background:rgba(245,158,11,0.1);">
-            <i data-lucide="heart" class="w-6 h-6" style="color:var(--gold);"></i>
-          </div>
-          <p class="font-bold text-sm" style="color:var(--text);">Humanis</p>
-        </div>
-        <div class="card rounded-2xl p-5 text-center">
-          <div class="w-12 h-12 mx-auto rounded-xl nb-primary flex items-center justify-center mb-3">
-            <i data-lucide="monitor" class="w-6 h-6" style="color:var(--primary);"></i>
-          </div>
-          <p class="font-bold text-sm" style="color:var(--text);">Adaptif</p>
-        </div>
-        <div class="card rounded-2xl p-5 text-center">
-          <div class="w-12 h-12 mx-auto rounded-xl nb-accent flex items-center justify-center mb-3">
-            <i data-lucide="users" class="w-6 h-6" style="color:var(--accent);"></i>
-          </div>
-          <p class="font-bold text-sm" style="color:var(--text);">Kolaboratif</p>
-        </div>
+    <!-- ===== SECTION: KEUNIKAN DAERAH CILACAP ===== -->
+    <div id="keunikan-cilacap" class="mt-16 animate-fade-in">
+      <div class="text-center mb-10">
+        <div class="section-label" style="justify-content:center;">Eksplorasi Daerah Asal</div>
+        <h3 class="font-display font-bold text-2xl md:text-3xl" style="color:var(--text);">Pesona & Keunikan <span class="grad-text">Cilacap</span></h3>
+        <p class="mt-2 text-sm max-w-xl mx-auto" style="color:var(--text-muted);">Mengenal ragam warisan budaya, bentang alam, dan identitas historis pesisir selatan yang menginspirasi ketangguhan diri saya.</p>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- ===== ARTEFAK ===== -->
-<section id="artefak" class="section-pad" style="background:var(--bg2);">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16 animate-fade-in">
-      <div class="section-label" style="justify-content:center;">Portofolio</div>
-      <h2 class="font-display font-bold text-4xl md:text-5xl mb-4" style="color:var(--text);">Artefak <span class="grad-text">Pembelajaran</span></h2>
-      <p class="text-lg max-w-2xl mx-auto" style="color:var(--text-muted);">Koleksi komprehensif produk dan perangkat pembelajaran yang dikembangkan selama program PPG Prajabatan</p>
-    </div>
-    <div class="flex flex-wrap justify-center gap-2 mb-10 animate-fade-in delay-100">
-      <button onclick="filterArtefak('all', this)" class="filter-btn active">Semua</button>
-      <button onclick="filterArtefak('perangkat', this)" class="filter-btn">Perangkat</button>
-      <button onclick="filterArtefak('media', this)" class="filter-btn">Media</button>
-      <button onclick="filterArtefak('penilaian', this)" class="filter-btn">Penilaian</button>
-    </div>
-    <div id="artefakGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in delay-200"></div>
-  </div>
-</section>
-
-<!-- ===== PENILAIAN ===== -->
-<section id="penilaian" class="section-pad" style="background:var(--bg);">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16 animate-fade-in">
-      <div class="section-label" style="justify-content:center;">Evaluasi</div>
-      <h2 class="font-display font-bold text-4xl md:text-5xl mb-3" style="color:var(--text);">Penilaian GP &amp; <span class="grad-text">DPL</span></h2>
-      <p class="text-lg" style="color:var(--text-muted);">Perkembangan profesional selama 3 siklus PPL</p>
-    </div>
-    <div class="grid md:grid-cols-3 gap-8">
-      <!-- Siklus 1 -->
-      <div class="card siklus-card animate-fade-in delay-100" style="border-left:4px solid var(--primary);">
-        <div class="flex items-center justify-between mb-6">
-          <h3 class="font-display font-bold text-2xl" style="color:var(--text);">Siklus 1</h3>
-          <span class="text-xs font-bold px-3 py-1 rounded-full nb-primary" style="color:var(--primary);">Awal</span>
-        </div>
-        <div class="grid grid-cols-2 gap-4 mb-6">
-          <div class="nilai-box nb-primary text-center">
-            <p class="text-xs mb-1" style="color:var(--text-muted);">Nilai GP</p>
-            <p class="text-3xl font-bold font-display grad-text">78</p>
-          </div>
-          <div class="nilai-box nb-accent text-center">
-            <p class="text-xs mb-1" style="color:var(--text-muted);">Nilai DPL</p>
-            <p class="text-3xl font-bold font-display" style="color:var(--accent);">80</p>
-          </div>
-        </div>
-        <p class="text-xs font-bold uppercase tracking-wider mb-2" style="color:var(--text-muted);">Progress</p>
-        <div class="progress-bar mb-4"><div class="progress-fill" style="width:65%;"></div></div>
-        <p class="text-sm border-t pt-4" style="color:var(--text-muted);border-color:var(--border);"><strong style="color:var(--text);">Catatan:</strong> Perlu meningkatkan pengelolaan kelas dan variasi metode pembelajaran.</p>
-      </div>
-      <!-- Siklus 2 -->
-      <div class="card siklus-card animate-fade-in delay-200" style="border-left:4px solid var(--accent);">
-        <div class="flex items-center justify-between mb-6">
-          <h3 class="font-display font-bold text-2xl" style="color:var(--text);">Siklus 2</h3>
-          <span class="text-xs font-bold px-3 py-1 rounded-full nb-accent" style="color:var(--accent);">Berkembang</span>
-        </div>
-        <div class="grid grid-cols-2 gap-4 mb-6">
-          <div class="nilai-box nb-primary text-center">
-            <p class="text-xs mb-1" style="color:var(--text-muted);">Nilai GP</p>
-            <p class="text-3xl font-bold font-display grad-text">85</p>
-          </div>
-          <div class="nilai-box nb-accent text-center">
-            <p class="text-xs mb-1" style="color:var(--text-muted);">Nilai DPL</p>
-            <p class="text-3xl font-bold font-display" style="color:var(--accent);">87</p>
-          </div>
-        </div>
-        <p class="text-xs font-bold uppercase tracking-wider mb-2" style="color:var(--text-muted);">Progress</p>
-        <div class="progress-bar mb-4"><div class="progress-fill" style="width:85%;"></div></div>
-        <p class="text-sm border-t pt-4" style="color:var(--text-muted);border-color:var(--border);"><strong style="color:var(--text);">Catatan:</strong> Peningkatan signifikan dalam diferensiasi dan media interaktif.</p>
-      </div>
-      <!-- Siklus 3 -->
-      <div class="card siklus-card featured animate-fade-in delay-300">
-        <div class="flex items-center justify-between mb-6">
-          <h3 class="font-display font-bold text-2xl" style="color:var(--text);">Siklus 3</h3>
-          <span class="text-xs font-bold px-3 py-1 rounded-full" style="background:rgba(245,158,11,0.12);color:var(--gold);">Final 🏆</span>
-        </div>
-        <div class="grid grid-cols-2 gap-4 mb-6">
-          <div class="nilai-box nb-primary text-center">
-            <p class="text-xs mb-1" style="color:var(--text-muted);">Nilai GP</p>
-            <p class="text-3xl font-bold font-display grad-text">92</p>
-          </div>
-          <div class="nilai-box nb-accent text-center">
-            <p class="text-xs mb-1" style="color:var(--text-muted);">Nilai DPL</p>
-            <p class="text-3xl font-bold font-display" style="color:var(--accent);">94</p>
-          </div>
-        </div>
-        <p class="text-xs font-bold uppercase tracking-wider mb-2" style="color:var(--text-muted);">Progress</p>
-        <div class="progress-bar mb-4"><div class="progress-fill" style="width:100%;"></div></div>
-        <p class="text-sm border-t pt-4" style="color:var(--text-muted);border-color:var(--border);"><strong style="color:var(--text);">Catatan:</strong> Kompetensi guru profesional yang matang dan reflektif.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== REFLEKSI ===== -->
-<section id="refleksi" class="section-pad" style="background:var(--bg2);">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16 animate-fade-in">
-      <div class="section-label" style="justify-content:center;">Introspeksi</div>
-      <h2 class="font-display font-bold text-4xl md:text-5xl" style="color:var(--text);">Refleksi <span class="grad-text">Diri</span></h2>
-    </div>
-    <div class="max-w-3xl mx-auto space-y-5 animate-fade-in delay-100">
-      <div class="card rounded-2xl p-8" style="border-left:4px solid var(--primary);">
-        <h3 class="font-display font-bold mb-4 flex items-center gap-2" style="color:var(--text);">
-          <i data-lucide="mountain" class="w-5 h-5" style="color:var(--primary);"></i> Tantangan Selama PPL
-        </h3>
-        <p class="leading-relaxed text-sm" style="color:var(--text-muted);">Menghadapi keberagaman kemampuan siswa menjadi tantangan terbesar. Saya belajar bahwa tidak ada pendekatan tunggal untuk semua siswa. Melalui trial and error, saya menemukan bahwa pembelajaran berdiferensiasi dan asesmen formatif adalah kunci keberhasilan.</p>
-      </div>
-      <div class="card rounded-2xl p-8" style="border-left:4px solid var(--accent);">
-        <h3 class="font-display font-bold mb-4 flex items-center gap-2" style="color:var(--text);">
-          <i data-lucide="lightbulb" class="w-5 h-5" style="color:var(--accent);"></i> Pembelajaran Bermakna
-        </h3>
-        <p class="leading-relaxed text-sm" style="color:var(--text-muted);">PPL mengajarkan saya bahwa mengajar adalah tentang memfasilitasi berpikir, membangun relasi emosional, dan menciptakan lingkungan aman. Setiap murid adalah individu unik dengan kebutuhan dan potensi berbeda yang perlu dihargai dan dikembangkan.</p>
-      </div>
-      <div class="card rounded-2xl p-8" style="border-left:4px solid var(--primary);">
-        <h3 class="font-display font-bold mb-4 flex items-center gap-2" style="color:var(--text);">
-          <i data-lucide="trending-up" class="w-5 h-5" style="color:var(--primary);"></i> Strategi Pengembangan Diri
-        </h3>
-        <ul class="space-y-2 text-sm" style="color:var(--text-muted);">
-          <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 flex-shrink-0" style="color:var(--primary);"></i> Mengikuti pelatihan dan workshop pengembangan profesional berkelanjutan</li>
-          <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 flex-shrink-0" style="color:var(--primary);"></i> Membangun jejaring komunitas guru reflektif dan inovatif</li>
-          <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 flex-shrink-0" style="color:var(--primary);"></i> Menerapkan penelitian tindakan kelas secara berkala</li>
-          <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 flex-shrink-0" style="color:var(--primary);"></i> Mengembangkan portofolio digital untuk dokumentasi pertumbuhan</li>
-        </ul>
-      </div>
-      <div class="card rounded-2xl p-8" style="border:2px solid rgba(245,158,11,0.3);background:linear-gradient(135deg,rgba(245,158,11,0.05),rgba(124,58,237,0.05));">
-        <h3 class="font-display font-bold mb-4 flex items-center gap-2" style="color:var(--text);">
-          <i data-lucide="sun" class="w-5 h-5" style="color:var(--gold);"></i> Harapan Masa Depan
-        </h3>
-        <p class="leading-relaxed italic text-base" style="color:var(--text-muted);">"Saya berharap menjadi guru yang tidak hanya mengajarkan rumus dan kode, tetapi mengajarkan cara berpikir, keberanian bertanya, dan kegembiraan belajar. Saya ingin setiap murid merasa dilihat, dihargai, dan didukung untuk mencapai potensi terbaiknya."</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== GALERI ===== -->
-<section id="galeri" class="section-pad" style="background:var(--bg);">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16 animate-fade-in">
-      <div class="section-label" style="justify-content:center;">Dokumentasi</div>
-      <h2 class="font-display font-bold text-4xl md:text-5xl" style="color:var(--text);">Galeri <span class="grad-text">Kegiatan</span></h2>
-    </div>
-    <div class="masonry animate-fade-in delay-100">
-      <div class="galeri-item h-56" style="background:linear-gradient(135deg,rgba(124,58,237,0.15),rgba(124,58,237,0.04));border:1px solid var(--border);">🎓</div>
-      <div class="galeri-item h-44" style="background:linear-gradient(135deg,rgba(245,158,11,0.14),rgba(245,158,11,0.04));border:1px solid var(--border);">👨‍🏫</div>
-      <div class="galeri-item h-64" style="background:linear-gradient(135deg,rgba(6,182,212,0.14),rgba(6,182,212,0.04));border:1px solid var(--border);">💻</div>
-      <div class="galeri-item h-52" style="background:linear-gradient(135deg,rgba(139,92,246,0.14),rgba(139,92,246,0.04));border:1px solid var(--border);">📊</div>
-      <div class="galeri-item h-48" style="background:linear-gradient(135deg,rgba(244,63,94,0.12),rgba(244,63,94,0.04));border:1px solid var(--border);">🎤</div>
-      <div class="galeri-item h-60" style="background:linear-gradient(135deg,rgba(124,58,237,0.12),rgba(6,182,212,0.06));border:1px solid var(--border);">📋</div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== LAMPIRAN ===== -->
-<section id="lampiran" class="section-pad" style="background:var(--bg2);">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16 animate-fade-in">
-      <div class="section-label" style="justify-content:center;">Dokumen</div>
-      <h2 class="font-display font-bold text-4xl md:text-5xl mb-3" style="color:var(--text);">Download <span class="grad-text">Lampiran</span></h2>
-      <p class="text-lg" style="color:var(--text-muted);">Dokumen lengkap perangkat pembelajaran dan sertifikat</p>
-    </div>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in delay-100">
-      <div class="card rounded-2xl p-6">
-        <div class="w-12 h-12 nb-primary rounded-xl flex items-center justify-center mb-4">
-          <i data-lucide="file-text" class="w-6 h-6" style="color:var(--primary);"></i>
-        </div>
-        <h3 class="font-display font-bold mb-2" style="color:var(--text);">RPP &amp; Modul Ajar</h3>
-        <p class="text-sm mb-4" style="color:var(--text-muted);">Rencana Pelaksanaan Pembelajaran dan Modul Ajar Kurikulum Merdeka</p>
-        <button class="btn-primary text-sm py-2.5 px-5"><i data-lucide="download" class="w-4 h-4"></i> Download</button>
-      </div>
-      <div class="card rounded-2xl p-6">
-        <div class="w-12 h-12 nb-accent rounded-xl flex items-center justify-center mb-4">
-          <i data-lucide="clipboard-check" class="w-6 h-6" style="color:var(--accent);"></i>
-        </div>
-        <h3 class="font-display font-bold mb-2" style="color:var(--text);">Instrumen Penilaian</h3>
-        <p class="text-sm mb-4" style="color:var(--text-muted);">Rubrik penilaian, asesmen formatif, dan alat ukur pembelajaran</p>
-        <button class="btn-primary text-sm py-2.5 px-5"><i data-lucide="download" class="w-4 h-4"></i> Download</button>
-      </div>
-      <div class="card rounded-2xl p-6">
-        <div class="w-12 h-12 nb-primary rounded-xl flex items-center justify-center mb-4">
-          <i data-lucide="monitor-play" class="w-6 h-6" style="color:var(--primary);"></i>
-        </div>
-        <h3 class="font-display font-bold mb-2" style="color:var(--text);">Media Pembelajaran</h3>
-        <p class="text-sm mb-4" style="color:var(--text-muted);">Materi pendukung pembelajaran interaktif dan LKPD</p>
-        <button class="btn-primary text-sm py-2.5 px-5"><i data-lucide="download" class="w-4 h-4"></i> Download</button>
-      </div>
-      <div class="card rounded-2xl p-6">
-        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background:rgba(245,158,11,0.1);">
-          <i data-lucide="award" class="w-6 h-6" style="color:var(--gold);"></i>
-        </div>
-        <h3 class="font-display font-bold mb-2" style="color:var(--text);">Sertifikat PPG</h3>
-        <p class="text-sm mb-4" style="color:var(--text-muted);">Sertifikat penyelesaian Program Pendidikan Profesi Guru</p>
-        <button class="btn-primary text-sm py-2.5 px-5"><i data-lucide="download" class="w-4 h-4"></i> Download</button>
-      </div>
-      <div class="card rounded-2xl p-6">
-        <div class="w-12 h-12 nb-primary rounded-xl flex items-center justify-center mb-4">
-          <i data-lucide="file-text" class="w-6 h-6" style="color:var(--primary);"></i>
-        </div>
-        <h3 class="font-display font-bold mb-2" style="color:var(--text);">Lampiran 7 &amp; 8</h3>
-        <p class="text-sm mb-4" style="color:var(--text-muted);">Lampiran resmi kurikulum dan perangkat pembelajaran standar</p>
-        <button class="btn-primary text-sm py-2.5 px-5"><i data-lucide="download" class="w-4 h-4"></i> Download</button>
-      </div>
-      <div class="card rounded-2xl p-6">
-        <div class="w-12 h-12 nb-accent rounded-xl flex items-center justify-center mb-4">
-          <i data-lucide="book-open" class="w-6 h-6" style="color:var(--accent);"></i>
-        </div>
-        <h3 class="font-display font-bold mb-2" style="color:var(--text);">Dokumen Pendukung</h3>
-        <p class="text-sm mb-4" style="color:var(--text-muted);">Laporan PTK, refleksi pembelajaran, dan dokumen lainnya</p>
-        <button class="btn-primary text-sm py-2.5 px-5"><i data-lucide="download" class="w-4 h-4"></i> Download</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== KONTAK ===== -->
-<section id="kontak" class="section-pad" style="background:var(--bg);">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16 animate-fade-in">
-      <div class="section-label" style="justify-content:center;">Hubungi Saya</div>
-      <h2 class="font-display font-bold text-4xl md:text-5xl" style="color:var(--text);">Mari <span class="grad-text">Terhubung</span></h2>
-    </div>
-    <div class="grid md:grid-cols-2 gap-12">
-      <div class="animate-fade-in delay-100">
-        <h3 class="font-display font-bold text-2xl mb-8" style="color:var(--text);">Informasi Kontak</h3>
-        <div class="space-y-4">
-          <div class="card rounded-2xl p-6 flex items-start gap-4">
-            <div class="w-12 h-12 nb-primary rounded-xl flex items-center justify-center flex-shrink-0">
-              <i data-lucide="mail" class="w-5 h-5" style="color:var(--primary);"></i>
+      <!-- Grid Cards Keunikan -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Card 1: Nusakambangan -->
+        <div class="card rounded-2xl overflow-hidden flex flex-col justify-between">
+          <div>
+            <div class="h-44 w-full bg-slate-200 relative overflow-hidden group">
+              <img src="images/nusakambangan.webp" alt="Pulau Nusakambangan" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center bg-gradient-to-br from-purple-900/40 to-slate-800 text-3xl">🏝️</div>
             </div>
-            <div>
-              <h4 class="font-bold mb-1" style="color:var(--text);">Email</h4>
-              <p id="contactEmail" class="text-sm" style="color:var(--text-muted);">dwi.wahyu@email.com</p>
+            <div class="p-5">
+              <h4 class="font-display font-bold text-base mb-1.5 flex items-center gap-2" style="color:var(--text);">
+                <i data-lucide="shield" class="w-4 h-4 text-purple-500"></i> Pulau Nusakambangan
+              </h4>
+              <p class="text-xs leading-relaxed" style="color:var(--text-muted);">
+                Pulau terluar legendaris penahan badai ombak Samudra Hindia yang kaya akan cagar alam, pantai tersembunyi, sekaligus benteng sejarah keamanan nasional.
+              </p>
             </div>
           </div>
-          <div class="card rounded-2xl p-6 flex items-start gap-4">
-            <div class="w-12 h-12 nb-accent rounded-xl flex items-center justify-center flex-shrink-0">
-              <i data-lucide="phone" class="w-5 h-5" style="color:var(--accent);"></i>
-            </div>
-            <div>
-              <h4 class="font-bold mb-1" style="color:var(--text);">Telepon</h4>
-              <p id="contactPhone" class="text-sm" style="color:var(--text-muted);">+62 812 3456 7890</p>
-            </div>
-          </div>
-          <div class="card rounded-2xl p-6 flex items-start gap-4">
-            <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(245,158,11,0.1);">
-              <i data-lucide="map-pin" class="w-5 h-5" style="color:var(--gold);"></i>
-            </div>
-            <div>
-              <h4 class="font-bold mb-1" style="color:var(--text);">Lokasi</h4>
-              <p class="text-sm" style="color:var(--text-muted);">Surakarta, Jawa Tengah, Indonesia</p>
-            </div>
+          <div class="px-5 pb-5">
+            <span class="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-md bg-purple-500/10 text-purple-600 dark:text-purple-300">Benteng Pertahanan</span>
           </div>
         </div>
-      </div>
-      <div class="animate-fade-in delay-200">
-        <h3 class="font-display font-bold text-2xl mb-8" style="color:var(--text);">Kirim Pesan</h3>
-        <div class="card rounded-2xl p-8">
-          <div class="mb-4">
-            <label class="block font-bold mb-2 text-sm" style="color:var(--text);">Nama</label>
-            <input type="text" placeholder="Nama Anda" class="w-full px-4 py-3 rounded-xl text-sm">
+
+        <!-- Card 2: Teluk Penyu -->
+        <div class="card rounded-2xl overflow-hidden flex flex-col justify-between">
+          <div>
+            <div class="h-44 w-full bg-slate-200 relative overflow-hidden group">
+              <img src="images/telukpenyu.jpg" alt="Pantai Teluk Penyu" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center bg-gradient-to-br from-cyan-900/40 to-slate-800 text-3xl">🌊</div>
+            </div>
+            <div class="p-5">
+              <h4 class="font-display font-bold text-base mb-1.5 flex items-center gap-2" style="color:var(--text);">
+                <i data-lucide="palmtree" class="w-4 h-4 text-cyan-500"></i> Pantai Teluk Penyu
+              </h4>
+              <p class="text-xs leading-relaxed" style="color:var(--text-muted);">
+                Ikon wisata pesisir Cilacap dengan panorama langsung menghadap pulau seberang, pusat berlabuhnya kapal nelayan tradisional, serta tradisi ritual sedekah laut tahunan.
+              </p>
+            </div>
           </div>
-          <div class="mb-4">
-            <label class="block font-bold mb-2 text-sm" style="color:var(--text);">Email</label>
-            <input type="email" placeholder="email@example.com" class="w-full px-4 py-3 rounded-xl text-sm">
+          <div class="px-5 pb-5">
+            <span class="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-md bg-cyan-500/10 text-cyan-600 dark:text-cyan-300">Kekayaan Maritim</span>
           </div>
-          <div class="mb-5">
-            <label class="block font-bold mb-2 text-sm" style="color:var(--text);">Pesan</label>
-            <textarea placeholder="Tulis pesan Anda..." rows="4" class="w-full px-4 py-3 rounded-xl text-sm resize-none"></textarea>
-          </div>
-          <button class="btn-primary w-full justify-center">
-            <i data-lucide="send" class="w-4 h-4"></i> Kirim Pesan
-          </button>
         </div>
+
+        <!-- Card 3: Benteng Pendem -->
+        <div class="card rounded-2xl overflow-hidden flex flex-col justify-between">
+          <div>
+            <div class="h-44 w-full bg-slate-200 relative overflow-hidden group">
+              <img src="images/bentengpendem.jpeg" alt="Benteng Pendem" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center bg-gradient-to-br from-amber-900/40 to-slate-800 text-3xl">🏛️</div>
+            </div>
+            <div class="p-5">
+              <h4 class="font-display font-bold text-base mb-1.5 flex items-center gap-2" style="color:var(--text);">
+                <i data-lucide="landmark" class="w-4 h-4 text-amber-500"></i> Benteng Pendem
+              </h4>
+              <p class="text-xs leading-relaxed" style="color:var(--text-muted);">
+                Kawasan peninggalan arsitektur militer Belanda abad ke-19 (*Kustbatterij op de Landtong te Tjilatjap*) yang terpendam di bawah tanah pesisir pantai.
+              </p>
+            </div>
+          </div>
+          <div class="px-5 pb-5">
+            <span class="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-md bg-amber-500/10 text-amber-600 dark:text-amber-300">Situs Historis</span>
+          </div>
+        </div>
+
+        <!-- Card 4: Kuliner Khas Brekecek -->
+        <div class="card rounded-2xl overflow-hidden flex flex-col justify-between">
+          <div>
+            <div class="h-44 w-full bg-slate-200 relative overflow-hidden group">
+              <img src="images/makanan.webp" alt="Kuliner Khas Brekecek" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+              <div class="absolute inset-0 hidden flex-col items-center justify-center bg-gradient-to-br from-emerald-900/40 to-slate-800 text-3xl">🍲</div>
+            </div>
+            <div class="p-5">
+              <h4 class="font-display font-bold text-base mb-1.5 flex items-center gap-2" style="color:var(--text);">
+                <i data-lucide="utensils" class="w-4 h-4 text-emerald-500"></i> Brekecek Pathak Jahan
+              </h4>
+              <p class="text-xs leading-relaxed" style="color:var(--text-muted);">
+                Kuliner tradisional otentik Cilacap berbahan dasar kepala ikan Jahan yang dimasak kuah bumbu kuning pedas gurih kaya akan rempah Nusantara nusantara.
+              </p>
+            </div>
+          </div>
+          <div class="px-5 pb-5">
+            <span class="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-md bg-emerald-500/10 text-emerald-600 dark:text-emerald-300">Warisan Kuliner</span>
+          </div>
+        </div>
+
       </div>
     </div>
+
   </div>
-</section>
+</main>
 
 <!-- ===== FOOTER ===== -->
-<footer class="py-14">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid md:grid-cols-4 gap-10 mb-12">
-      <div>
-        <a href="#" class="flex items-center gap-2 mb-4 text-decoration-none">
-          <div class="w-9 h-9 rounded-xl flex items-center justify-center" style="background:linear-gradient(135deg,var(--primary),var(--accent));">
-            <i data-lucide="graduation-cap" class="w-4 h-4 text-white"></i>
-          </div>
-          <span class="font-display font-bold text-lg" style="color:var(--text);">E-Portfolio</span>
-        </a>
-        <p class="text-sm leading-relaxed" style="color:var(--text-muted);">Dokumentasi perjalanan menjadi guru profesional melalui PPG Prajabatan.</p>
-      </div>
-      <div>
-        <h4 class="font-display font-bold mb-4" style="color:var(--text);">Menu</h4>
-        <ul class="space-y-2 text-sm" style="color:var(--text-muted);">
-          <li><a href="#profil" style="color:var(--text-muted);text-decoration:none;" onmouseover="this.style.color=getComputedStyle(document.documentElement).getPropertyValue('--primary')" onmouseout="this.style.color=getComputedStyle(document.documentElement).getPropertyValue('--text-muted')">Profil</a></li>
-          <li><a href="#artefak" style="color:var(--text-muted);text-decoration:none;" onmouseover="this.style.color=getComputedStyle(document.documentElement).getPropertyValue('--primary')" onmouseout="this.style.color=getComputedStyle(document.documentElement).getPropertyValue('--text-muted')">Portofolio</a></li>
-          <li><a href="#penilaian" style="color:var(--text-muted);text-decoration:none;" onmouseover="this.style.color=getComputedStyle(document.documentElement).getPropertyValue('--primary')" onmouseout="this.style.color=getComputedStyle(document.documentElement).getPropertyValue('--text-muted')">Penilaian</a></li>
-          <li><a href="#refleksi" style="color:var(--text-muted);text-decoration:none;" onmouseover="this.style.color=getComputedStyle(document.documentElement).getPropertyValue('--primary')" onmouseout="this.style.color=getComputedStyle(document.documentElement).getPropertyValue('--text-muted')">Refleksi</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-display font-bold mb-4" style="color:var(--text);">Kontak</h4>
-        <ul class="space-y-2 text-sm" style="color:var(--text-muted);">
-          <li id="footerEmail">dwi.wahyu@email.com</li>
-          <li id="footerPhone">+62 812 3456 7890</li>
-          <li id="footerUniversity">Univ. Muhammadiyah Surakarta</li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-display font-bold mb-4" style="color:var(--text);">Media Sosial</h4>
-        <div class="flex gap-3">
-          <a href="#" class="w-10 h-10 rounded-xl flex items-center justify-center transition" style="background:var(--surface2);border:1px solid var(--border);" onmouseover="this.style.background='var(--primary)';this.style.borderColor='var(--primary)'" onmouseout="this.style.background='var(--surface2)';this.style.borderColor='var(--border)'">
-            <i data-lucide="instagram" class="w-5 h-5" style="color:var(--text-muted);"></i>
-          </a>
-          <a href="#" class="w-10 h-10 rounded-xl flex items-center justify-center transition" style="background:var(--surface2);border:1px solid var(--border);" onmouseover="this.style.background='var(--primary)';this.style.borderColor='var(--primary)'" onmouseout="this.style.background='var(--surface2)';this.style.borderColor='var(--border)'">
-            <i data-lucide="linkedin" class="w-5 h-5" style="color:var(--text-muted);"></i>
-          </a>
-          <a href="#" class="w-10 h-10 rounded-xl flex items-center justify-center transition" style="background:var(--surface2);border:1px solid var(--border);" onmouseover="this.style.background='var(--primary)';this.style.borderColor='var(--primary)'" onmouseout="this.style.background='var(--surface2)';this.style.borderColor='var(--border)'">
-            <i data-lucide="youtube" class="w-5 h-5" style="color:var(--text-muted);"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="border-t pt-8 text-center" style="border-color:var(--border);">
-      <p id="footerQuote" class="italic text-sm mb-3" style="color:var(--text-muted);">"Education is not the filling of a pail, but the lighting of a fire." — W.B. Yeats</p>
-      <p class="text-xs" style="color:var(--text-sub);">© 2025 Dwi Wahyu Nugroho · PPG Prajabatan · Universitas Muhammadiyah Surakarta</p>
-    </div>
-    <div class="flex justify-center mt-6">
-      <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="btn-ghost text-sm py-2.5 px-6 flex items-center gap-2">
-        <i data-lucide="arrow-up" class="w-4 h-4"></i> Kembali ke Atas
-      </button>
-    </div>
+<footer class="py-8 border-t" style="border-color:var(--border); background: var(--surface2);">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="text-xs" style="color:var(--text-muted);">
+      © 2026 Dwi Wahyu Nugroho · PPG Prajabatan · Universitas Muhammadiyah Surakarta
+    </p>
   </div>
 </footer>
 
-<!-- FAB -->
-<button class="fab" onclick="document.getElementById('kontak').scrollIntoView({behavior:'smooth'})">
-  <i data-lucide="message-circle" class="w-6 h-6"></i>
-</button>
-
-<!-- MODAL -->
-<div id="modal" class="modal-overlay" style="display:none;" onclick="if(event.target===this)closeModal()">
-  <div class="modal-box">
-    <button onclick="closeModal()" style="position:absolute;top:18px;right:18px;width:32px;height:32px;border-radius:50%;background:var(--surface2);border:1px solid var(--border);color:var(--text-muted);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px;">✕</button>
-    <h3 id="modalTitle" class="font-display font-bold text-xl mb-5" style="color:var(--text);"></h3>
-    <div id="modalContent"></div>
-  </div>
-</div>
-
+<!-- ===== JAVASCRIPT LOGIC ===== -->
 <script>
-  /* ===== ARTEFAK DATA ===== */
-  const artefakData = [
-    { title:'RPP Kurikulum Merdeka', category:'perangkat', emoji:'📄', thumb:'at-purple',
-      desc:'Rencana Pelaksanaan Pembelajaran berbasis Kurikulum Merdeka untuk Pemrograman Web',
-      tujuan:'Memfasilitasi pemahaman konsep dasar HTML, CSS, dan JavaScript',
-      teori:'Konstruktivisme Piaget', kelebihan:'Terstruktur, diferensiasi jelas', kekurangan:'Perlu aktivitas hands-on lebih' },
-    { title:'Modul Ajar Interaktif', category:'perangkat', emoji:'📘', thumb:'at-cyan',
-      desc:'Modul digital dengan aktivitas interaktif untuk pembelajaran mandiri siswa',
-      tujuan:'Mendorong kemandirian belajar dan self-regulated learning',
-      teori:'Self-Regulated Learning', kelebihan:'Engaging, multimodal', kekurangan:'Membutuhkan akses perangkat' },
-    { title:'Simulasi Jaringan Komputer', category:'media', emoji:'🌐', thumb:'at-violet',
-      desc:'Simulasi interaktif topologi jaringan menggunakan Cisco Packet Tracer',
-      tujuan:'Membangun pemahaman konsep jaringan secara visual dan praktis',
-      teori:'Teori Representasi Bruner', kelebihan:'Visual, interaktif, mudah dipahami', kekurangan:'Perlu adaptasi awal siswa' },
-    { title:'LKPD Berbasis Masalah', category:'perangkat', emoji:'📝', thumb:'at-amber',
-      desc:'Lembar kerja dengan konteks dunia nyata untuk PBL di bidang informatika',
-      tujuan:'Mengembangkan problem-solving dan computational thinking',
-      teori:'Problem-Based Learning', kelebihan:'Kontekstual, menantang', kekurangan:'Bimbingan intensif diperlukan' },
-    { title:'Video Tutorial Pemrograman', category:'media', emoji:'🎬', thumb:'at-green',
-      desc:'Video tutorial langkah-langkah pembuatan aplikasi sederhana dengan Python',
-      tujuan:'Menyajikan konsep pemrograman secara visual dan mudah diikuti',
-      teori:'Multimedia Learning Mayer', kelebihan:'Menarik, dapat diulang kapan saja', kekurangan:'Satu arah, kurang interaktif' },
-    { title:'Rubrik Penilaian Autentik', category:'penilaian', emoji:'✅', thumb:'at-pink',
-      desc:'Rubrik dan asesmen formatif berbasis proyek dan kinerja siswa',
-      tujuan:'Mengukur pemahaman dan keterampilan siswa secara holistik',
-      teori:'Authentic Assessment', kelebihan:'Komprehensif, adil', kekurangan:'Waktu koreksi lebih panjang' },
-  ];
+  /* ===== CAROUSEL FUNCTIONALITY ===== */
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.carousel-item');
+  const dots = document.querySelectorAll('.carousel-dot');
+  const totalSlides = slides.length;
+  let carouselInterval;
 
-  function renderArtefak(filter = 'all') {
-    const grid = document.getElementById('artefakGrid');
-    grid.innerHTML = '';
-    const data = filter === 'all' ? artefakData : artefakData.filter(a => a.category === filter);
-    data.forEach((item, i) => {
-      const card = document.createElement('div');
-      card.className = 'card rounded-2xl overflow-hidden';
-      card.style.cssText = `animation: fadeInUp 0.5s ease ${i * 0.08}s both;`;
-      card.innerHTML = `
-        <div class="artefak-thumb ${item.thumb}">${item.emoji}</div>
-        <div class="p-6">
-          <div class="artefak-tag">${item.category}</div>
-          <h3 class="font-display font-bold text-base mb-2" style="color:var(--text);">${item.title}</h3>
-          <p class="text-sm mb-4 leading-relaxed" style="color:var(--text-muted);">${item.desc}</p>
-          <button onclick="openModal(${artefakData.indexOf(item)})" class="flex items-center gap-2 text-sm font-bold transition" style="color:var(--primary);">
-            <i data-lucide="eye" class="w-4 h-4"></i> Lihat Detail
-          </button>
-        </div>
-      `;
-      grid.appendChild(card);
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => {
+      dot.classList.remove('bg-white');
+      dot.classList.add('bg-white/40');
     });
-    lucide.createIcons();
+
+    slides[index].classList.add('active');
+    dots[index].classList.remove('bg-white/40');
+    dots[index].classList.add('bg-white');
+    currentSlide = index;
   }
 
-  function filterArtefak(cat, btn) {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    renderArtefak(cat);
+  function nextSlide() {
+    let next = (currentSlide + 1) % totalSlides;
+    showSlide(next);
   }
 
-  function openModal(idx) {
-    const item = artefakData[idx];
-    document.getElementById('modalTitle').textContent = item.emoji + '  ' + item.title;
-    document.getElementById('modalContent').innerHTML = `
-      <div style="display:flex;flex-direction:column;gap:14px;">
-        <div><p class="text-xs font-bold uppercase tracking-wider mb-1" style="color:var(--primary);">Deskripsi</p><p class="text-sm leading-relaxed" style="color:var(--text-muted);">${item.desc}</p></div>
-        <div><p class="text-xs font-bold uppercase tracking-wider mb-1" style="color:var(--primary);">Tujuan Pembelajaran</p><p class="text-sm leading-relaxed" style="color:var(--text-muted);">${item.tujuan}</p></div>
-        <div><p class="text-xs font-bold uppercase tracking-wider mb-1" style="color:var(--primary);">Landasan Teori</p><p class="text-sm leading-relaxed" style="color:var(--text-muted);">${item.teori}</p></div>
-        <div><p class="text-xs font-bold uppercase tracking-wider mb-1" style="color:var(--primary);">Kelebihan</p><p class="text-sm leading-relaxed" style="color:var(--text-muted);">${item.kelebihan}</p></div>
-        <div><p class="text-xs font-bold uppercase tracking-wider mb-1" style="color:var(--primary);">Kekurangan</p><p class="text-sm leading-relaxed" style="color:var(--text-muted);">${item.kekurangan}</p></div>
-        <button onclick="closeModal()" class="btn-primary mt-2" style="justify-content:center;"><i data-lucide="x" class="w-4 h-4"></i> Tutup</button>
-      </div>
-    `;
-    document.getElementById('modal').style.display = 'flex';
-    lucide.createIcons();
+  function setSlide(index) {
+    showSlide(index);
+    resetInterval(); // Reset timer saat diklik manual
   }
 
-  function closeModal() {
-    document.getElementById('modal').style.display = 'none';
+  function startInterval() {
+    carouselInterval = setInterval(nextSlide, 4000); // Berganti setiap 4 detik
   }
 
-  /* ===== THEME TOGGLE ===== */
+  function resetInterval() {
+    clearInterval(carouselInterval);
+    startInterval();
+  }
+
+  // Mulai autoplay saat halaman dimuat
+  startInterval();
+
+
+  /* ===== THEME TOGGLE FUNCTIONALITY ===== */
   let isDark = false;
   function toggleTheme() {
     isDark = !isDark;
@@ -1448,27 +544,30 @@
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
   }
 
-  /* ===== MOBILE MENU ===== */
+  /* ===== MOBILE MENU FUNCTIONALITY ===== */
   function toggleMobileMenu() {
-    const m = document.getElementById('mobileMenu');
-    m.classList.toggle('hidden');
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('hidden');
   }
 
-  /* ===== NAVBAR SCROLL ===== */
+  /* ===== INTERACTIVE NAVBAR SCROLL EFFECT ===== */
   window.addEventListener('scroll', () => {
     const nav = document.getElementById('navbar');
-    nav.classList.toggle('scrolled', window.scrollY > 60);
+    if (window.scrollY > 40) {
+      nav.classList.add('shadow-md');
+    } else {
+      nav.classList.remove('shadow-md');
+    }
   });
 
-  /* ===== INIT ===== */
-  // Load saved theme
+  /* ===== PERSISTENT THEME INITIALIZATION ===== */
   if (localStorage.getItem('theme') === 'dark') {
     isDark = true;
     document.body.classList.add('dark');
     document.getElementById('themeIcon').setAttribute('data-lucide', 'sun');
   }
 
-  renderArtefak();
+  // Initialize Lucide Vector Icons
   lucide.createIcons();
 </script>
 </body>
