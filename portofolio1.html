@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio 1 - Dwi Wahyu Nugroho</title>
+  <title>Portfolio Topik 4 - Dwi Wahyu Nugroho</title>
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -183,12 +183,10 @@
 </head>
 <body class="font-body">
 
-<!-- ===== NAVBAR ===== -->
 <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-20">
 
-      <!-- Logo -->
       <a href="#" class="flex items-center gap-2">
         <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:linear-gradient(135deg,var(--primary),var(--accent));">
           <i data-lucide="graduation-cap" class="w-5 h-5 text-white"></i>
@@ -196,13 +194,12 @@
         <span class="font-display font-bold text-xl" style="color:var(--text);">E-Portfolio</span>
       </a>
 
-      <!-- 5 Tombol Navigasi Utama -->
       <div class="hidden md:flex items-center gap-7">
         <a href="index.html" class="nav-link text-sm">Profil Mahasiswa</a>
         <a href="lokasi.html" class="nav-link text-sm">Lokasi LPTK</a>
-        <a href="#" class="nav-link text-sm active">Portfolio 1</a>
-        <a href="#portfolio-2" class="nav-link text-sm">Portfolio 2</a>
-        <a href="#portfolio-3" class="nav-link text-sm">Portfolio 3</a>
+        <a href="#" class="nav-link text-sm active">Portfolio Topik 4</a>
+        <a href="portofolio2.html" class="nav-link text-sm">Portfolio UTS</a>
+        <a href="portofolio3.html" class="nav-link text-sm">Portolio UAS</a>
       </div>
 
       <div class="flex items-center gap-3">
@@ -219,20 +216,17 @@
     </div>
   </div>
 
-  <!-- Mobile Menu Links -->
   <div id="mobileMenu" class="hidden md:hidden border-t px-4 py-4 space-y-2" style="border-color:var(--border); background:var(--surface);">
     <a href="index.html" class="block py-2 text-sm font-semibold" style="color:var(--text-muted);">Profil Mahasiswa</a>
-    <a href="lokasi.html" class="block py-2 text-sm font-semibold" style="color:var(--text-muted);">Lokasi LPTK</a>
-    <a href="#" class="block py-2 text-sm font-semibold text-purple-600">Portfolio 1</a>
-    <a href="#portfolio-2" class="block py-2 text-sm font-semibold" style="color:var(--text-muted);">Portfolio 2</a>
-    <a href="#portfolio-3" class="block py-2 text-sm font-semibold" style="color:var(--text-muted);">Portfolio 3</a>
+    <a href="#" class="block py-2 text-sm font-semibold text-purple-600">Lokasi LPTK</a>
+    <a href="portofolio1.html" class="block py-2 text-sm font-semibold" style="color:var(--text-muted);">Portfolio Topik 4</a>
+    <a href="portofolio2.html" class="block py-2 text-sm font-semibold" style="color:var(--text-muted);">Portfolio UTS</a>
+    <a href="portofolio3.html" class="block py-2 text-sm font-semibold" style="color:var(--text-muted);">Portolio UAS</a>
   </div>
 </nav>
 
-<!-- ===== MAIN CONTENT PORTFOLIO 1 ===== -->
 <main class="space-y-4">
 
-  <!-- ===== SECTION 1: ARTEFAK PEMBELAJARAN (TERPISAH PER SIKLUS) ===== -->
   <section id="artefak" class="section-pad" style="background:var(--bg2);">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16 animate-fade-in">
@@ -241,7 +235,6 @@
         <p class="text-sm md:text-base max-w-3xl mx-auto" style="color:var(--text-muted);">Koleksi produk administrasi Modul Ajar, Perangkat RPP, Media Canva, dan Lembar Kerja Siswa (LKPD) yang telah dipisah secara spesifik per siklus.</p>
       </div>
 
-      <!-- Filter Kategori Khas Kode Awal -->
       <div class="flex flex-wrap justify-center gap-2 mb-10 animate-fade-in">
         <button onclick="filterArtefak('all', this)" class="filter-btn active">Semua Artefak</button>
         <button onclick="filterArtefak('perangkat', this)" class="filter-btn">Perangkat (RPP)</button>
@@ -249,12 +242,10 @@
         <button onclick="filterArtefak('lkpd', this)" class="filter-btn">LKPD Siswa</button>
       </div>
 
-      <!-- Grid Cards Tempat Inject Data Bawaan -->
       <div id="artefakGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in"></div>
     </div>
   </section>
 
-  <!-- ===== SECTION 2: PENILAIAN SIKLUS (LAMPIRAN 7 & LAMPIRAN 8 TERPISAH) ===== -->
   <section id="penilaian" class="section-pad" style="background:var(--bg);">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16 animate-fade-in">
@@ -264,7 +255,6 @@
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">
-        <!-- Siklus 1 -->
         <div class="card rounded-2xl p-6 animate-fade-in border-l-4 border-purple-500">
           <div class="flex items-center justify-between mb-4">
             <h3 class="font-display font-bold text-xl" style="color:var(--text);">Evaluasi Siklus 1</h3>
@@ -273,20 +263,19 @@
           <div class="space-y-2 mb-4">
             <button onclick="openNilaiModal('L7_S1')" class="w-full flex justify-between text-xs p-2 rounded-lg bg-slate-500/5 hover:bg-purple-500/10 transition">
               <span class="text-slate-400 font-medium flex items-center gap-1"><i data-lucide="file-text" class="w-3.5 h-3.5 text-purple-500"></i> Lampiran 7 (Perangkat)</span>
-              <span class="font-bold text-purple-600">78 / 100</span>
+              <span class="font-bold text-purple-600">72</span>
             </button>
             <button onclick="openNilaiModal('L8_S1')" class="w-full flex justify-between text-xs p-2 rounded-lg bg-slate-500/5 hover:bg-cyan-500/10 transition">
               <span class="text-slate-400 font-medium flex items-center gap-1"><i data-lucide="video" class="w-3.5 h-3.5 text-cyan-500"></i> Lampiran 8 (Praktik)</span>
-              <span class="font-bold text-cyan-500">80 / 100</span>
+              <span class="font-bold text-cyan-500">77</span>
             </button>
           </div>
           <div class="progress-bar mb-3"><div class="progress-fill" style="width:65%;"></div></div>
           <p class="text-[11px] leading-relaxed text-justify text-slate-400 border-t pt-3">
-            <strong style="color:var(--text);">Refleksi GP:</strong> Modul ajar esensial sudah runtut, namun manajemen waktu pada sintaks diskusi heterogen siswa SMK perlu diperketat.
+            <strong style="color:var(--text);">Refleksi GP:</strong> Modul ajar esensial sudah runtut, namun manajemen waktu pada sintaks diskusi heterogen siswa SMP perlu diperketat.
           </p>
         </div>
 
-        <!-- Siklus 2 -->
         <div class="card rounded-2xl p-6 animate-fade-in border-l-4 border-cyan-500" style="animation-delay: 0.1s;">
           <div class="flex items-center justify-between mb-4">
             <h3 class="font-display font-bold text-xl" style="color:var(--text);">Evaluasi Siklus 2</h3>
@@ -295,11 +284,11 @@
           <div class="space-y-2 mb-4">
             <button onclick="openNilaiModal('L7_S2')" class="w-full flex justify-between text-xs p-2 rounded-lg bg-slate-500/5 hover:bg-purple-500/10 transition">
               <span class="text-slate-400 font-medium flex items-center gap-1"><i data-lucide="file-text" class="w-3.5 h-3.5 text-purple-500"></i> Lampiran 7 (Perangkat)</span>
-              <span class="font-bold text-purple-600">85 / 100</span>
+              <span class="font-bold text-purple-600">74</span>
             </button>
             <button onclick="openNilaiModal('L8_S2')" class="w-full flex justify-between text-xs p-2 rounded-lg bg-slate-500/5 hover:bg-cyan-500/10 transition">
               <span class="text-slate-400 font-medium flex items-center gap-1"><i data-lucide="video" class="w-3.5 h-3.5 text-cyan-500"></i> Lampiran 8 (Praktik)</span>
-              <span class="font-bold text-cyan-500">87 / 100</span>
+              <span class="font-bold text-cyan-500">80</span>
             </button>
           </div>
           <div class="progress-bar mb-3"><div class="progress-fill" style="width:85%;"></div></div>
@@ -308,7 +297,6 @@
           </p>
         </div>
 
-        <!-- Siklus 3 -->
         <div class="card rounded-2xl p-6 animate-fade-in border-2 border-purple-500/30 bg-gradient-to-br from-purple-500/5 to-cyan-500/5" style="animation-delay: 0.2s;">
           <div class="flex items-center justify-between mb-4">
             <h3 class="font-display font-bold text-xl" style="color:var(--text);">Evaluasi Siklus 3</h3>
@@ -317,11 +305,11 @@
           <div class="space-y-2 mb-4">
             <button onclick="openNilaiModal('L7_S3')" class="w-full flex justify-between text-xs p-2 rounded-lg bg-slate-500/5 hover:bg-purple-500/10 transition">
               <span class="text-slate-400 font-medium flex items-center gap-1"><i data-lucide="file-text" class="w-3.5 h-3.5 text-purple-500"></i> Lampiran 7 (Perangkat)</span>
-              <span class="font-bold text-purple-600">92 / 100</span>
+              <span class="font-bold text-purple-600">78</span>
             </button>
             <button onclick="openNilaiModal('L8_S3')" class="w-full flex justify-between text-xs p-2 rounded-lg bg-slate-500/5 hover:bg-cyan-500/10 transition">
               <span class="text-slate-400 font-medium flex items-center gap-1"><i data-lucide="video" class="w-3.5 h-3.5 text-cyan-500"></i> Lampiran 8 (Praktik)</span>
-              <span class="font-bold text-cyan-500">94 / 100</span>
+              <span class="font-bold text-cyan-500">82</span>
             </button>
           </div>
           <div class="progress-bar mb-3"><div class="progress-fill" style="width:100%;"></div></div>
@@ -333,40 +321,48 @@
     </div>
   </section>
 
-  <!-- ===== SECTION 3: REFLEKSI DIRI & MODEL GURU ===== -->
   <section id="refleksi" class="section-pad" style="background:var(--bg2);">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16 animate-fade-in">
         <div class="section-label" style="justify-content:center;">Arah Kejuangan</div>
-        <h2 class="font-display font-bold text-4xl md:text-5xl" style="color:var(--text);">Refleksi & <span class="grad-text">Model Guru</span></h2>
+        <h2 class="font-display font-bold text-4xl md:text-5xl" style="color:var(--text);"><span class="grad-text">Model Guru</span></h2>
       </div>
       
       <div class="max-w-4xl mx-auto space-y-6 animate-fade-in">
         <div class="card rounded-2xl p-8 border-l-4 border-purple-500">
           <h3 class="font-display font-bold mb-3 flex items-center gap-2" style="color:var(--text);">
-            <i data-lucide="mountain" class="w-5 h-5 text-purple-500"></i> Tantangan & Pembelajaran Bermakna
+            <i data-lucide="mountain" class="w-5 h-5 text-purple-500"></i> Model Guru yang Dituju
           </h3>
           <p class="leading-relaxed text-sm text-justify text-slate-400">
-            Menghadapi tingkat keberagaman modalitas belajar siswa menjadi pengalaman esensial saya selama mengajar terbimbing. Melalui integrasi perkuliahan PPG, saya menyadari bahwa tidak ada metode tunggal (*one-size-fits-all*). Pembelajaran berdiferensiasi serta asesmen formatif berkala merupakan kunci utama keberhasilan kelas inklusif.
+           Sebagai calon guru profesional, saya ingin menjadi guru yang tidak hanya mampu menguasai materi pembelajaran, tetapi juga mampu menjadi fasilitator, motivator, dan teladan bagi peserta didik. Saya berkomitmen untuk menciptakan pembelajaran yang aktif, menyenangkan, bermakna, serta mampu mengembangkan kemampuan berpikir kritis, kreativitas, kolaborasi. Selain itu, saya ingin menjadi guru yang adaptif terhadap perkembangan teknologi dan mampu memanfaatkan teknologi digital untuk mendukung proses pembelajaran yang efektif.
+          </p>
+        </div>
+        <div class="max-w-4xl mx-auto space-y-6 animate-fade-in">
+        <div class="card rounded-2xl p-8 border-l-4 border-purple-500">
+          <h3 class="font-display font-bold mb-3 flex items-center gap-2" style="color:var(--text);">
+            <i data-lucide="mountain" class="w-5 h-5 text-purple-500"></i> Karakter Guru 
+          </h3>
+          <p class="leading-relaxed text-sm text-justify text-slate-400">
+           Karakter guru yang ingin saya bangun adalah guru yang sabar, empati, reflektif, kreatif, inovatif, dan memiliki semangat belajar sepanjang hayat. Saya juga ingin menjadi guru yang menerapkan Growth Mindset, terbuka terhadap kritik dan masukan, serta terus melakukan perbaikan diri untuk meningkatkan kualitas pembelajaran. Dengan karakter tersebut, saya berharap dapat menjadi guru profesional yang mampu membimbing peserta didik berkembang secara akademik maupun karakter sehingga menjadi generasi yang cerdas, berakhlak, dan siap menghadapi tantangan masa depan.
           </p>
         </div>
 
         <div class="card rounded-2xl p-8 border-l-4 border-cyan-500">
           <h3 class="font-display font-bold mb-4 flex items-center gap-2" style="color:var(--text);">
-            <i data-lucide="award" class="w-5 h-5 text-cyan-500"></i> Komitmen Rancangan Model Guru Profesional
+            <i data-lucide="award" class="w-5 h-5 text-cyan-500"></i> Kompetensi yang Ingin Dibangun
           </h3>
           <div class="space-y-4 pl-2">
             <div class="tl-item">
-              <p class="font-bold text-xs sm:text-sm" style="color:var(--text);">Misi Pendidik</p>
-              <p class="text-xs text-slate-400">Merancang program pengajaran Informatika berbasis studi kasus kontekstual (*Problem-Based Learning*), mengeksplorasi ekosistem kecerdasan buatan (AI) secara bijak, serta mendampingi siswa.</p>
+              <p class="font-bold text-xs sm:text-sm" style="color:var(--text);">Kompetensi Pedagogik</p>
+              <p class="text-xs text-slate-400">Mampu memahami karakteristik peserta didik, merancang pembelajaran yang sesuai dengan kebutuhan siswa, melaksanakan pembelajaran yang berpusat pada peserta didik, serta melakukan asesmen untuk meningkatkan kualitas pembelajaran.</p>
             </div>
             <div class="tl-item">
-              <p class="font-bold text-xs sm:text-sm" style="color:var(--text);">Kompetensi Inti (Pedagogik & TPACK)</p>
-              <p class="text-xs text-slate-400">Menguasai materi bidang studi Informatika (Algoritma, Jaringan, Dampak Sosial Informatika) yang selaras dengan keterampilan penyusunan instrumen evaluasi yang adil dan transparan.</p>
+              <p class="font-bold text-xs sm:text-sm" style="color:var(--text);">Kompetensi Profesional</p>
+              <p class="text-xs text-slate-400">Menguasai materi pelajaran secara mendalam, mengikuti perkembangan ilmu pengetahuan dan teknologi, serta mampu menghubungkan materi pembelajaran dengan kehidupan nyata sehingga pembelajaran menjadi lebih kontekstual.</p>
             </div>
             <div class="tl-item">
-              <p class="font-bold text-xs sm:text-sm" style="color:var(--text);">Karakter Guru Unggul</p>
-              <p class="text-xs text-slate-400">Membangun watak kepribadian pendidik yang kreatif, adaptif, humanis, kolaboratif, serta senantiasa membuka diri untuk merefleksikan setiap tindakan belajar.</p>
+              <p class="font-bold text-xs sm:text-sm" style="color:var(--text);">Kompetensi Kepribadian</p>
+              <p class="text-xs text-slate-400">Memiliki integritas, disiplin, tanggung jawab, jujur, serta menjadi teladan yang baik bagi peserta didik dalam sikap maupun perilaku sehari-hari.</p>
             </div>
           </div>
         </div>
@@ -374,40 +370,33 @@
     </div>
   </section>
 
-  <!-- ===== SECTION 4: GALERI KEGIATAN PPL ===== -->
-<section id="galeri" class="section-pad" style="background:var(--bg);">
+  <section id="galeri" class="section-pad" style="background:var(--bg);">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16 animate-fade-in">
         <div class="section-label" style="justify-content:center;">Dokumentasi</div>
         <h2 class="font-display font-bold text-4xl md:text-5xl" style="color:var(--text);">Galeri <span class="grad-text">Kegiatan PPL</span></h2>
       </div>
       <div class="masonry animate-fade-in">
-        <!-- Item 1 -->
         <div class="galeri-item h-56 bg-gradient-to-br from-purple-500/10 to-slate-200/5 border border-purple-500/10 overflow-hidden">
           <img src="images/bgporto.jpeg" alt="Kegiatan PPL 1" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
         </div>
         
-        <!-- Item 2 -->
         <div class="galeri-item h-44 bg-gradient-to-br from-amber-500/10 to-slate-200/5 border border-amber-500/10 overflow-hidden">
           <img src="images/bg3.jpeg" alt="Kegiatan PPL 2" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
         </div>
         
-        <!-- Item 3 -->
         <div class="galeri-item h-64 bg-gradient-to-br from-cyan-500/10 to-slate-200/5 border border-cyan-500/10 overflow-hidden">
           <img src="images/bgporto2.jpeg" alt="Kegiatan PPL 3" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
         </div>
         
-        <!-- Item 4 -->
         <div class="galeri-item h-52 bg-gradient-to-br from-violet-500/10 to-slate-200/5 border border-violet-500/10 overflow-hidden">
           <img src="images/kegiatan.jpeg" alt="Kegiatan PPL 4" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
         </div>
         
-        <!-- Item 5 -->
         <div class="galeri-item h-48 bg-gradient-to-br from-rose-500/10 to-slate-200/5 border border-rose-500/10 overflow-hidden">
           <img src="images/kegiatan1.jpeg" alt="Kegiatan PPL 5" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
         </div>
         
-        <!-- Item 6 -->
         <div class="galeri-item h-60 bg-gradient-to-br from-emerald-500/10 to-slate-200/5 border border-emerald-500/10 overflow-hidden">
           <img src="images/kegiatan2.jpeg" alt="Kegiatan PPL 6" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
         </div>
@@ -415,49 +404,10 @@
     </div>
   </section>
 
-  <!-- ===== SECTION 5: DOWNLOAD LAMPIRAN ===== -->
-  <section id="lampiran" class="section-pad" style="background:var(--bg2);">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16 animate-fade-in">
-        <div class="section-label" style="justify-content:center;">Unduh Dokumen Resmi</div>
-        <h2 class="font-display font-bold text-4xl md:text-5xl mb-3" style="color:var(--text);">Download <span class="grad-text">Lampiran Perangkat</span></h2>
-        <p class="text-sm md:text-base" style="color:var(--text-muted);">Akses berkas berkas digital dokumen cetak instrumen administrasi standar mutu kurikulum.</p>
-      </div>
-      
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
-        <div class="card rounded-2xl p-6 flex flex-col justify-between">
-          <div>
-            <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center mb-4 text-purple-500"><i data-lucide="file-text" class="w-6 h-6"></i></div>
-            <h3 class="font-display font-bold mb-2 text-base" style="color:var(--text);">Bundel Modul &amp; RPP</h3>
-            <p class="text-xs text-slate-400 mb-4">Kumpulan modul Kurikulum Merdeka informatika Siklus 1 sampai Siklus 3 lengkap.</p>
-          </div>
-          <button onclick="openArtefakModal(0)" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-cyan-500 text-white font-bold text-xs flex items-center justify-center gap-1 hover:opacity-90"><i data-lucide="eye" class="w-3.5 h-3.5"></i> Pratinjau Berkas</button>
-        </div>
-
-        <div class="card rounded-2xl p-6 flex flex-col justify-between">
-          <div>
-            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-4 text-cyan-500"><i data-lucide="clipboard-check" class="w-6 h-6"></i></div>
-            <h3 class="font-display font-bold mb-2 text-base" style="color:var(--text);">Bundel Lampiran 7 &amp; 8</h3>
-            <p class="text-xs text-slate-400 mb-4">Gabungan cetak berkas instrumen instrumen validasi penilaian dari Guru Pamong.</p>
-          </div>
-          <button onclick="openNilaiModal('L7_S3')" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-cyan-500 text-white font-bold text-xs flex items-center justify-center gap-1 hover:opacity-90"><i data-lucide="eye" class="w-3.5 h-3.5"></i> Pratinjau Berkas</button>
-        </div>
-
-        <div class="card rounded-2xl p-6 flex flex-col justify-between">
-          <div>
-            <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center mb-4 text-purple-500"><i data-lucide="monitor-play" class="w-6 h-6"></i></div>
-            <h3 class="font-display font-bold mb-2 text-base" style="color:var(--text);">Bundel Media &amp; LKPD</h3>
-            <p class="text-xs text-slate-400 mb-4">Berkas digital kompilasi materi tayang canva beserta pengerjaan lembar siswa.</p>
-          </div>
-          <button onclick="openArtefakModal(4)" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-cyan-500 text-white font-bold text-xs flex items-center justify-center gap-1 hover:opacity-90"><i data-lucide="eye" class="w-3.5 h-3.5"></i> Pratinjau Berkas</button>
-        </div>
-      </div>
-    </div>
-  </section>
+ 
 
 </main>
 
-<!-- ===== MODAL POPUP DIALOG UTAMA (INTEGRASI PDF VIEWER INTERAKTIF) ===== -->
 <div id="artefakModal" class="modal-overlay" style="display:none;" onclick="if(event.target===this)closeModal()">
   <div class="modal-box max-w-4xl">
     <button onclick="closeModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-500/10 flex items-center justify-center font-bold text-slate-400 hover:bg-slate-500/20 z-50">✕</button>
@@ -465,7 +415,6 @@
   </div>
 </div>
 
-<!-- ===== FOOTER ===== -->
 <footer class="py-8 border-t" style="border-color:var(--border); background: var(--surface2);">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <p class="text-xs" style="color:var(--text-muted);">
@@ -474,33 +423,139 @@
   </div>
 </footer>
 
-<!-- ===== JAVASCRIPT DATABINDING LOGIC ===== -->
 <script>
-  /* ===== DATA ARTEFAK PEMBELAJARAN (TERPISAH PER SIKLUS) ===== */
+  /* ===== DATA ARTEFAK PEMBELAJARAN (TERPISAH PER SIKLUS DENGAN ANALISIS MENDALAM) ===== */
   const artefakData = [
-    { title: 'Modul Ajar Kurikulum Merdeka', category: 'perangkat', emoji: '📄', thumb: 'at-purple', pdfUrl: 'assets/lkpd_siklus2.pdf', konteks: 'Modul kurikulum merdeka fondasi utama berpikir komputasional.', tujuan: 'Memandu pola pikir logis algoritma siswa secara mandiri.', kelebihan: 'Sintaks diferensiasi produk sangat jelas terintegrasi.', kekurangan: 'Membutuhkan waktu pengawasan lab komputer yang ketat.', teori: 'Teori Kognitivisme (Jean Piaget) — Konstruksi kognisi anak berkembang optimal melalui tantangan pemecahan masalah mandiri.' },
-    
-    { title: 'RPP Informatika - Siklus 1', category: 'perangkat', emoji: '📁', thumb: 'at-purple', pdfUrl: 'pdf/rpp_siklus1.pdf', konteks: 'Rancangan pengajaran Siklus 1 PPL Terbimbing di SMK.', tujuan: 'Mengarahkan pemahaman dasar arsitektur jaringan komputer.', kelebihan: 'Sistem evaluasi awal dirancang objektif.', kekurangan: 'Manajemen waktu aktivitas kelompok siswa masih kaku.', teori: 'Teori Konstruktivisme Sosial — Pembelajaran awal terbimbing membangun pondasi pengetahuan dasar berkelanjutan.' },
-    { title: 'RPP Informatika - Siklus 2', category: 'perangkat', emoji: '📁', thumb: 'at-purple', pdfUrl: 'pdf/rpp_siklus2.pdf', konteks: 'Perangkat ajar hasil refleksi siklus pertama.', tujuan: 'Mengakselerasi kecakapan manipulasi baris kode dasar pemrograman.', kelebihan: 'Pembagian kelompok diskusi heterogen berjalan efektif.', kekurangan: 'Waktu transisi ruang kelas menuju lab sedikit memakan waktu.', teori: 'Teori Belajar Bermakna (Ausubel) — Mengaitkan struktur konsep algoritma baru dengan pengetahuan awal siswa.' },
-    { title: 'RPP Informatika - Siklus 3', category: 'perangkat', emoji: '🏆', thumb: 'at-purple', pdfUrl: 'pdf/rpp_siklus3.pdf', konteks: 'Rancangan final mengajar mandiri penuh di Siklus akhir.', tujuan: 'Mengintegrasikan proyek kelompok berdaya guna.', kelebihan: 'Pembelajaran diferensiasi produk berjalan maksimal.', kekurangan: 'Memerlukan spesifikasi teknis lab komputer yang seragam.', teori: 'Experiential Learning (David Kolb) — Siklus berkelanjutan melahirkan transformasi aksi mengajar yang matang.' },
-    
-    { title: 'Media PPT Canva - Siklus 1', category: 'media', emoji: '🎨', thumb: 'at-cyan', pdfUrl: 'assets/siklus1/Materi_Siklus_1_DSI_Hoax.pdf', konteks: 'Bahan tayang visual presentasi pendukung Siklus 1.', tujuan: 'Peserta didik mampu menjelaskan pengertian hoaks serta mengidentifikasi dampak negatifnya dalam kehidupan sehari-hari dengan tepat dan penuh kesadaran.', teori: 'Dampak Sosial Informatika(Hoaks dan Dampaknya)' },
-    { title: 'Media PPT Canva - Siklus 2', category: 'media', emoji: '🎨', thumb: 'at-cyan', pdfUrl: 'assets/siklus2/kredibilitas_informasi_digital_siklus2.pdf', konteks: 'Bahan tayang visual presentasi pendukung Siklus 2.', tujuan: 'Melalui diskusi kelompok dan studi kasus, peserta didik mampu mengevaluasi kredibilitas sumber informasi digital dengan mengidentifikasi ciri-ciri informasi yang dapat dipercaya secara tepat dan kritis.', teori: 'Dampak Sosial Informatika(Kredibilitas informasi Digital)' },
-    { title: 'Media PPT Canva - Siklus 3', category: 'media', emoji: '🎨', thumb: 'at-cyan', pdfUrl: 'pdf/media_canva_s3.pdf', konteks: 'Bahan tayang presentasi akhir pemicu diskusi Dampak Sosial Informatika.', tujuan: 'Menampilkan studi kasus siber dunia nyata secara provokatif positif.', kelebihan: 'Sangat interaktif memancing pendapat kritis siswa.', kekurangan: 'Siswa dapat terdistraksi jika animasi slide terlalu berlebihan.', teori: 'Kajian Visual Literacy — Mengembangkan kemampuan menginterpretasikan pesan visual digital secara kritis.' },
-    
-    { title: 'LKPD Pembelajaran - Siklus 1', category: 'lkpd', emoji: '📝', thumb: 'at-amber', pdfUrl: 'assets/siklus1/LKPD_Hoaks_Menarik.pdf', konteks: 'Lembar aktivitas praktikum kelompok rancangan topologi jaringan.', tujuan: 'Peserta didik mampu menjelaskan pengertian hoaks serta mengidentifikasi dampak negatifnya dalam kehidupan sehari-hari dengan tepat dan penuh kesadaran.FGaleri.',  teori: 'Dampak Sosial Informatika (Hoaks dan Dampaknya)' },
-    { title: 'LKPD Pembelajaran - Siklus 2', category: 'lkpd', emoji: '📝', thumb: 'at-amber', pdfUrl: 'assets/siklus2/lkpd_siklus2.pdf', konteks: 'Lembar pengerjaan tantangan algoritma pemrograman berkelompok.', tujuan: 'Melalui diskusi kelompok dan studi kasus, peserta didik mampu mengevaluasi kredibilitas sumber informasi digital dengan mengidentifikasi ciri-ciri informasi yang dapat dipercaya secara tepat dan kritis.', teori: 'Dampak Sosial Informatika(Kredibilitas informasi Digital)' },
-    { title: 'LKPD Pembelajaran - Siklus 3', category: 'lkpd', emoji: '📝', thumb: 'at-amber', pdfUrl: 'pdf/lkpd_s3.pdf', konteks: 'Lembar analisis portofolio dampak digital sosial media.', tujuan: 'Menganalisis studi kasus hukum UU ITE and jejak digital.', kelebihan: 'Mendorong keterampilan berpikir tingkat tinggi (HOTS) siswa.', kekurangan: 'Rubrik penilaian deskriptif memerlukan waktu koreksi mendetail.', teori: 'Kecakapan Abad 21 (4C) — Menstimulasi indikator Critical Thinking dan Collaboration secara simultan.' }
+    { 
+      title: 'Modul Ajar Kurikulum Merdeka', 
+      category: 'perangkat', 
+      emoji: '📄', 
+      thumb: 'at-purple', 
+      pdfUrl: 'assets/Modul_Ajar_Full.pdf', 
+      konteks: 'Modul komprehensif penunjang materi utama Dampak Sosial Informatika (DSI) di SMP.', 
+      tujuan: 'Mengarahkan kemampuan penalaran kritis siswa dalam merespons ekosistem dan etika digital.', 
+      kelebihan: 'Materi ini kontekstual dengan kehidupan sehari-hari, mampu meningkatkan literasi digital, melatih berpikir kritis, serta menanamkan nilai tanggung jawab dalam penggunaan teknologi dan media sosial.',
+      kekurangan: 'Materi masih cenderung bersifat teoritis sehingga perlu didukung dengan studi kasus atau praktik langsung untuk meningkatkan pemahaman siswa. Selain itu, diperlukan pendampingan guru agar siswa mampu menerapkan keterampilan berpikir kritis secara tepat.',
+      teori: 'Berdasarkan Computational Thinking, siswa dilatih berpikir logis dan sistematis dalam memverifikasi informasi. Dari teori konstruktivisme, siswa membangun pemahaman melalui pengalaman nyata terkait penggunaan media sosial. Sementara itu, Filosofi Pendidikan Ki Hajar Dewantara menekankan pembentukan karakter yang bertanggung jawab dan beretika dalam kehidupan digital.' 
+    },
+    { 
+      title: 'RPP Informatika - Siklus 1', 
+      category: 'perangkat', 
+      emoji: '📁', 
+      thumb: 'at-purple', 
+      pdfUrl: 'pdf/rpp_siklus1.pdf', 
+      konteks: 'Rancangan pengajaran Siklus 1 PPL Terbimbing berfokus pada materi penanganan berita hoaks.', 
+      tujuan: 'Membimbing peserta didik mampu menjelaskan pengertian hoaks serta mengidentifikasi dampak negatifnya.', 
+      kelebihan: 'Materi ini kontekstual dengan kehidupan sehari-hari, mampu meningkatkan literasi digital, melatih berpikir kritis, serta menanamkan nilai tanggung jawab dalam penggunaan teknologi dan media sosial.',
+      kekurangan: 'Materi masih cenderung bersifat teoritis sehingga perlu didukung dengan studi kasus atau praktik langsung untuk meningkatkan pemahaman siswa. Selain itu, diperlukan pendampingan guru agar siswa mampu menerapkan keterampilan berpikir kritis secara tepat.',
+      teori: 'Berdasarkan Computational Thinking, siswa dilatih berpikir logis dan sistematis dalam memverifikasi informasi. Dari teori konstruktivisme, siswa membangun pemahaman melalui pengalaman nyata terkait penggunaan media sosial. Sementara itu, Filosofi Pendidikan Ki Hajar Dewantara menekankan pembentukan karakter yang bertanggung jawab dan beretika dalam kehidupan digital.' 
+    },
+    { 
+      title: 'RPP Informatika - Siklus 2', 
+      category: 'perangkat', 
+      emoji: '📁', 
+      thumb: 'at-purple', 
+      pdfUrl: 'pdf/rpp_siklus2.pdf', 
+      konteks: 'Perangkat ajar hasil refleksi Siklus 1 untuk materi Kredibilitas Informasi Digital.', 
+      tujuan: 'Mengarahkan kemampuan peserta didik mengevaluasi keabsahan data/informasi di internet.', 
+      kelebihan: 'Penerapan pengelompokan tingkat kemampuan kognitif (*tiered groups*) berjalan dinamis.',
+      kekurangan: 'Proses transisi pengerjaan antar-aktivitas di lembar kerja sedikit memotong waktu diskusi.',
+      teori: 'Teori Belajar Bermakna (Ausubel) — Mengaitkan struktur konsep informasi digital baru dengan pengetahuan awal yang dimiliki siswa.' 
+    },
+    { 
+      title: 'RPP Informatika - Siklus 3', 
+      category: 'perangkat', 
+      emoji: '🏆', 
+      thumb: 'at-purple', 
+      pdfUrl: 'pdf/rpp_siklus3.pdf', 
+      konteks: 'Rancangan final pengajaran mandiri komprehensif materi regulasi UU ITE dan Jejak Digital.', 
+      tujuan: 'Menganalisis studi kasus implikasi hukum dan menjaga rekam jejak digital positif di dunia maya.', 
+      kelebihan: 'Sintaks diferensiasi produk akhir kelompok terlaksana dengan sangat matang.',
+      kekurangan: 'Memerlukan integrasi platform penunjang eksternal yang seragam.',
+      teori: 'Experiential Learning Theory (David Kolb) — Siklus pengalaman konkret dan refleksi berkelanjutan menghasilkan kompetensi aksi nyata yang adaptif.' 
+    },
+    { 
+      title: 'Media PPT Canva - Siklus 1', 
+      category: 'media', 
+      emoji: '🎨', 
+      thumb: 'at-cyan', 
+      pdfUrl: 'assets/siklus1/Materi_Siklus_1_DSI_Hoax.pdf', 
+      konteks: 'Bahan tayang visual presentasi pendukung Siklus 1 (Materi Hoaks dan Dampaknya).', 
+      tujuan: 'Peserta didik mampu menjelaskan pengertian hoaks serta mengidentifikasi dampak negatifnya dalam kehidupan sehari-hari.', 
+      kelebihan: 'Materi ini kontekstual dengan kehidupan sehari-hari, mampu meningkatkan literasi digital, melatih berpikir kritis, serta menanamkan nilai tanggung jawab dalam penggunaan teknologi dan media sosial.',
+      kekurangan: 'Materi masih cenderung bersifat teoritis sehingga perlu didukung dengan studi kasus atau praktik langsung untuk meningkatkan pemahaman siswa. Selain itu, diperlukan pendampingan guru agar siswa mampu menerapkan keterampilan berpikir kritis secara tepat.',
+      teori: 'Berdasarkan Computational Thinking, siswa dilatih berpikir logis dan sistematis dalam memverifikasi informasi. Dari teori konstruktivisme, siswa membangun pemahaman melalui pengalaman nyata terkait penggunaan media sosial. Sementara itu, Filosofi Pendidikan Ki Hajar Dewantara menekankan pembentukan karakter yang bertanggung jawab dan beretika dalam kehidupan digital.' 
+    },
+    { 
+      title: 'Media PPT Canva - Siklus 2', 
+      category: 'media', 
+      emoji: '🎨', 
+      thumb: 'at-cyan', 
+      pdfUrl: 'assets/siklus2/kredibilitas_informasi_digital_siklus2.pdf', 
+      konteks: 'Bahan tayang visual presentasi pendukung Siklus 2 (Materi Kredibilitas Informasi).', 
+      tujuan: 'Peserta didik mampu mengevaluasi ciri-ciri sumber informasi digital yang valid dan dapat dipercaya.', 
+      kelebihan: 'Materi ini memiliki kelebihan karena menggunakan topik yang dekat dengan kehidupan sehari-hari siswa sehingga mudah dipahami dan menarik untuk dipelajari. Selain itu, materi mampu melatih kemampuan berpikir kritis melalui kegiatan mengidentifikasi sumber informasi yang kredibel dan tidak kredibel. Materi juga mendukung penguatan literasi digital serta pembentukan karakter siswa agar lebih teliti dan bertanggung jawab dalam menggunakan informasi.',
+      kekurangan: 'Meskipun materi sudah cukup baik, penyajiannya masih lebih banyak berfokus pada penjelasan konsep dibandingkan praktik langsung. Materi juga belum banyak menampilkan studi kasus nyata atau aktivitas pengecekan fakta yang dapat meningkatkan keterlibatan siswa. Selain itu, bentuk asesmen yang digunakan belum dijelaskan secara rinci sehingga kemampuan siswa dalam menganalisis kredibilitas informasi belum dapat diukur secara optimal.',
+      teori: 'Berdasarkan kajian teori yang dipelajari pada mata kuliah terintegrasi PPL Terbimbing, materi ini sesuai dengan konsep Computational Thinking karena melatih siswa menganalisis dan mengevaluasi informasi berdasarkan sumber dan bukti yang tersedia. Dari aspek Pemahaman Peserta Didik dan Pembelajaran, materi dikaitkan dengan pengalaman nyata siswa dalam menggunakan internet sehingga pembelajaran menjadi lebih bermakna. Dari perspektif Filosofi Pendidikan dan Pendidikan Nilai, materi menanamkan nilai tanggung jawab, kejujuran, dan etika digital. Selain itu, materi mendukung Growth Mindset karena mendorong siswa untuk terus belajar, memverifikasi informasi, dan terbuka terhadap fakta baru, serta sejalan dengan Pembelajaran Mendalam (PMA) yang menekankan pemahaman dan penerapan konsep dalam kehidupan sehari-hari.' 
+    },
+    { 
+      title: 'Media PPT Canva - Siklus 3', 
+      category: 'media', 
+      emoji: '🎨', 
+      thumb: 'at-cyan', 
+      pdfUrl: 'assets/siklus3/materi_ajar.pdf', 
+      konteks: 'Bahan tayang pemicu diskusi akhir Siklus 3.', 
+      tujuan: 'Peserta didik Mampu menjelaskan fakta dan opini.', 
+      kelebihan: 'Materi disajikan secara sederhana, sistematis, dan sesuai dengan tingkat perkembangan peserta didik kelas VII. Penyajian definisi, ciri-ciri, perbedaan, serta contoh fakta dan opini dalam kehidupan sehari-hari memudahkan siswa memahami konsep yang dipelajari. Selain itu, materi juga mendorong kemampuan berpikir kritis dan literasi informasi yang penting dalam menghadapi arus informasi digital saat ini.',
+      kekurangan: 'Materi masih berfokus pada pemahaman konsep dasar sehingga belum banyak memberikan aktivitas analisis yang lebih mendalam. Contoh yang digunakan juga masih terbatas sehingga siswa mungkin memerlukan lebih banyak latihan dari sumber informasi nyata seperti berita atau media sosial. Selain itu, belum terdapat asesmen yang secara khusus mengukur kemampuan siswa dalam mengidentifikasi fakta dan opini pada berbagai konteks informasi.',
+      teori: 'Materi ini selaras dengan teori Computational Thinking, khususnya pada kemampuan mengidentifikasi, mengelompokkan, dan menganalisis informasi berdasarkan karakteristik fakta dan opini. Dari perspektif Pemahaman Peserta Didik dan Pembelajaran, materi dikaitkan dengan pengalaman nyata siswa sehingga mendukung pembelajaran bermakna sesuai teori konstruktivisme. Dalam Filosofi Pendidikan dan Pendidikan Nilai, materi membantu menanamkan sikap jujur, objektif, dan menghargai pendapat orang lain. Selain itu, materi mendukung Pembelajaran Mendalam (PMA) karena mendorong siswa memahami, menganalisis, dan menerapkan konsep fakta dan opini dalam kehidupan sehari-hari, serta sejalan dengan Growth Mindset yang melatih siswa untuk berpikir terbuka, kritis, dan tidak mudah menerima informasi tanpa melakukan pemeriksaan terlebih dahulu.' 
+    },
+    { 
+      title: 'LKPD Pembelajaran - Siklus 1', 
+      category: 'lkpd', 
+      emoji: '📝', 
+      thumb: 'at-amber', 
+      pdfUrl: 'assets/siklus1/LKPD_Hoaks_Menarik.pdf', 
+      konteks: 'Lembar aktivitas analisis mandiri kelompok untuk penanganan penyebaran berita palsu.', 
+      tujuan: 'Melatih kemampuan siswa mengidentifikasi ciri hoaks dari sampel artikel berita riil.', 
+      kelebihan: 'LKPD ini berpusat pada peserta didik, mendorong kerja sama kelompok, melatih kemampuan komunikasi, berpikir kritis, dan pemecahan masalah. Aktivitas yang disusun juga relevan dengan kehidupan sehari-hari sehingga pembelajaran menjadi lebih bermakna.',
+      kekurangan: 'Beberapa pertanyaan masih bersifat umum sehingga jawaban siswa dapat menjadi kurang mendalam. Selain itu, belum terdapat rubrik penilaian yang jelas untuk mengukur tingkat pencapaian peserta didik dan belum ada aktivitas verifikasi fakta secara langsung menggunakan sumber terpercaya.',
+      teori: 'Berdasarkan teori Konstruktivisme, peserta didik membangun pemahaman melalui pengamatan video dan diskusi kelompok. Dari sudut pandang Computational Thinking, siswa dilatih menganalisis informasi, mengidentifikasi pola hoaks, dan menentukan langkah penyelesaian masalah. Sementara itu, model Problem Based Learning mendorong peserta didik untuk aktif mencari solusi terhadap permasalahan nyata terkait penyebaran hoaks.' 
+    },
+    { 
+      title: 'LKPD Pembelajaran - Siklus 2', 
+      category: 'lkpd', 
+      emoji: '📝', 
+      thumb: 'at-amber', 
+      pdfUrl: 'assets/siklus2/lkpd_siklus2.pdf', 
+      konteks: 'Lembar kerja kelompok evaluasi validitas berita digital internet.', 
+      tujuan: 'Mengidentifikasi ciri-ciri sumber informasi digital yang kredibel.Menyampaikan hasil analisis secara logis dan kritis.', 
+      kelebihan: 'LKPD memiliki kelebihan karena menggunakan studi kasus yang realistis dan relevan dengan pengalaman peserta didik dalam menggunakan media digital. Aktivitas diskusi kelompok juga dapat meningkatkan kemampuan berpikir kritis, komunikasi, kolaborasi, dan pengambilan keputusan berdasarkan bukti. Selain itu, penggunaan model PBL membuat siswa lebih aktif dalam menemukan konsep daripada hanya menerima penjelasan dari guru.',
+      kekurangan: 'LKPD masih berfokus pada satu studi kasus sehingga variasi permasalahan yang dianalisis siswa masih terbatas. Kriteria penilaian hasil diskusi juga belum dijelaskan secara rinci sehingga guru perlu menyiapkan rubrik tambahan untuk mengukur keterampilan berpikir kritis dan kolaborasi siswa. Selain itu, belum terdapat aktivitas lanjutan berupa pencarian sumber informasi secara mandiri di internet.',
+      teori: 'LKPD ini sesuai dengan teori Problem Based Learning yang menempatkan peserta didik sebagai pusat pembelajaran melalui penyelesaian masalah nyata. Dari perspektif Computational Thinking, siswa melakukan proses analisis, evaluasi, dan pengambilan keputusan berdasarkan data yang tersedia. Dari aspek Pemahaman Peserta Didik dan Pembelajaran, kegiatan diskusi memungkinkan siswa membangun pengetahuan melalui interaksi sosial sesuai teori konstruktivisme. Selain itu, LKPD mendukung Pembelajaran Mendalam (PMA) karena siswa tidak hanya memahami konsep kredibilitas informasi, tetapi juga menerapkannya dalam situasi nyata serta mengembangkan sikap kritis dan bertanggung jawab dalam menggunakan informasi digital.' 
+    },
+    { 
+      title: 'LKPD Pembelajaran - Siklus 3', 
+      category: 'lkpd', 
+      emoji: '📝', 
+      thumb: 'at-amber', 
+      pdfUrl: 'assets/siklus3/lkpd_pert3.pdf', 
+      konteks: 'Lembar kerja portofolio pemetaan rekam jejak digital akun personal.', 
+      tujuan: 'Melalui analisis contoh berita digital, peserta didik mampu membedakan fakta danopini dalam suatu informasi secara tepat dan logis', 
+      kelebihan: 'LKPD ini memiliki kelebihan karena memberikan latihan langsung kepada peserta didik untuk mengidentifikasi fakta dan opini melalui contoh-contoh yang sederhana dan dekat dengan kehidupan mereka. Kegiatan diskusi kelompok juga mendorong keterampilan berpikir kritis, komunikasi, dan kolaborasi. Selain itu, adanya bagian refleksi dan kesimpulan membantu siswa membangun pemahaman yang lebih mendalam terhadap materi yang dipelajari.',
+      kekurangan: 'LKPD masih menggunakan jumlah contoh yang relatif sedikit sehingga variasi analisis yang dilakukan siswa menjadi terbatas. Beberapa pernyataan juga bersifat sederhana sehingga belum sepenuhnya menggambarkan kompleksitas informasi yang sering ditemukan di media digital. Selain itu, belum terdapat rubrik penilaian yang rinci untuk mengukur kemampuan siswa dalam memberikan alasan atau argumentasi terhadap jawaban yang dipilih.',
+      teori: 'LKPD ini sesuai dengan teori Problem Based Learning (PBL) karena peserta didik belajar melalui proses pemecahan masalah dan analisis informasi. Dari sudut pandang Computational Thinking, siswa dilatih mengklasifikasikan dan mengevaluasi informasi berdasarkan karakteristik fakta dan opini. Berdasarkan teori konstruktivisme, pengetahuan dibangun melalui pengalaman belajar, diskusi, dan refleksi yang dilakukan secara kelompok. Selain itu, LKPD mendukung Pembelajaran Mendalam (PMA) karena mendorong siswa memahami konsep, memberikan alasan yang logis, serta menerapkan kemampuan berpikir kritis dalam menilai informasi digital yang mereka temui sehari-hari.' 
+    }
   ];
 
   /* ===== DATA DOKUMEN PENILAIAN AUTENTIK (LAMPIRAN 7 & 8) ===== */
   const nilaiData = {
-    L7_S1: { title: 'Lampiran 7: Penilaian Perangkat - Siklus 1', score: '78/100', pdfUrl: 'pdf/lampiran7_s1.pdf', detail: 'Evaluasi keselarasan tujuan pembelajaran kurikulum merdeka dengan instrumen evaluasi formatif awal.' },
-    L8_S1: { title: 'Lampiran 8: Penilaian Praktik Mengajar - Siklus 1', score: '80/100', pdfUrl: 'pdf/lampiran8_s1.pdf', detail: 'Penilaian performa mengajar, pengelolaan dinamika kelas, and intonasi suara di depan siswa.' },
-    L7_S2: { title: 'Lampiran 7: Penilaian Perangkat - Siklus 2', score: '85/100', pdfUrl: 'pdf/lampiran7_s2.pdf', detail: 'Pemeriksaan integrasi konten materi esensial berbasis TPACK and keselarasan lembar LKPD kelompok.' },
-    L8_S2: { title: 'Lampiran 8: Penilaian Praktik Mengajar - Siklus 2', score: '87/100', pdfUrl: 'pdf/lampiran8_s2.pdf', detail: 'Evaluasi keaktifan interaksi umpan balik siswa berbantuan tayangan presentasi canva.' },
-    L7_S3: { title: 'Lampiran 7: Penilaian Perangkat - Siklus 3', score: '92/100', pdfUrl: 'pdf/lampiran7_s3.pdf', detail: 'Validasi rubrik penilaian autentik holistik pada rancangan materi Dampak Sosial Informatika.' },
-    L8_S3: { title: 'Lampiran 8: Penilaian Praktik Mengajar - Siklus 3', score: '94/100', pdfUrl: 'pdf/lampiran8_s3.pdf', detail: 'Uji kompetensi mengajar mandiri penuh dengan implementasi penuh pembelajaran diferensiasi produk.' }
+    L7_S1: { title: 'Lampiran 7: Penilaian Perangkat - Siklus 1', score: '72', pdfUrl: 'assets/siklus1/lampiran7s1.pdf', detail: 'Evaluasi keselarasan tujuan pembelajaran kurikulum merdeka dengan instrumen evaluasi formatif awal.' },
+    L8_S1: { title: 'Lampiran 8: Penilaian Praktik Mengajar - Siklus 1', score: '77', pdfUrl: 'assets/siklus1/lampiran8s1.pdf', detail: 'Penilaian performa mengajar, pengelolaan dinamika kelas, and intonasi suara di depan siswa.' },
+    L7_S2: { title: 'Lampiran 7: Penilaian Perangkat - Siklus 2', score: '74', pdfUrl: 'assets/siklus2/lampiran7s2.pdf', detail: 'Pemeriksaan integrasi konten materi esensial berbasis TPACK and keselarasan lembar LKPD kelompok.' },
+    L8_S2: { title: 'Lampiran 8: Penilaian Praktik Mengajar - Siklus 2', score: '80', pdfUrl: 'assets/siklus2/lampiran8s2.pdf', detail: 'Evaluasi keaktifan interaksi umpan balik siswa berbantuan tayangan presentasi canva.' },
+    L7_S3: { title: 'Lampiran 7: Penilaian Perangkat - Siklus 3', score: '78', pdfUrl: 'assets/siklus3/lampiran7s3.pdf', detail: 'Validasi rubrik penilaian autentik holistik pada rancangan materi Dampak Sosial Informatika.' },
+    L8_S3: { title: 'Lampiran 8: Penilaian Praktik Mengajar - Siklus 3', score: '82', pdfUrl: 'assets/siklus3/lampiran8s3.pdf', detail: 'Uji kompetensi mengajar mandiri penuh dengan implementasi penuh pembelajaran diferensiasi produk.' }
   };
 
   function renderArtefakGrid(filterType = 'all') {
@@ -537,7 +592,7 @@
     renderArtefakGrid(cat);
   }
 
-  /* ===== OPEN MODAL UNTUK ARTEFAK ===== */
+  /* ===== OPEN MODAL UNTUK ARTEFAK DENGAN DETAILED ANALYSIS GRID ===== */
   function openArtefakModal(idx) {
     const data = artefakData[idx];
     const content = document.getElementById('modalInnerContent');
@@ -546,14 +601,24 @@
         <span class="text-2xl">${data.emoji}</span>
         <div>
           <h3 class="font-display font-bold text-base" style="color:var(--text);">${data.title}</h3>
-         
+          <p class="text-[10px] text-purple-500 font-bold uppercase tracking-wider">Kajian Kritis & Analisis Akademik</p>
         </div>
       </div>
-      <div class="grid grid-cols-2 gap-3 text-xs pt-1">
-        <div><p class="text-[10px] font-bold uppercase text-purple-500 tracking-wider">Tujuan Pembelajaran</p><p class="text-slate-400">${data.tujuan}</p></div>
-        <div><p class="text-[10px] font-bold uppercase text-purple-500 tracking-wider">Materi</p><p class="text-slate-400 italic">${data.teori}</p></div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs pt-1">
+        <div class="space-y-2">
+          <div><p class="text-[10px] font-bold uppercase text-purple-500 tracking-wider">Konteks Artefak</p><p class="text-slate-400 text-justify">${data.konteks}</p></div>
+          <div><p class="text-[10px] font-bold uppercase text-purple-500 tracking-wider">Tujuan Pembelajaran</p><p class="text-slate-400 text-justify">${data.tujuan}</p></div>
+          <div><p class="text-[10px] font-bold uppercase text-purple-500 tracking-wider">Kajian Teori</p><p class="text-slate-400 italic">${data.teori}</p></div>
+        </div>
+        <div class="space-y-2">
+          <div><p class="text-[10px] font-bold uppercase text-emerald-500 tracking-wider">✓ Kelebihan Desain</p><p class="text-slate-400 text-justify">${data.kelebihan || 'Rancangan rapi, memuat pemicu pemikiran logis kontekstual.'}</p></div>
+          <div><p class="text-[10px] font-bold uppercase text-rose-500 tracking-wider">✗ Kekurangan / Kendala</p><p class="text-slate-400 text-justify">${data.kekurangan || 'Memerlukan ketepatan alokasi waktu penataan ruang kelas.'}</p></div>
+          
+        </div>
       </div>
-      <div class="mt-4 rounded-xl overflow-hidden border border-purple-500/20 shadow-inner bg-slate-900" style="height: 440px;">
+
+      <div class="mt-4 rounded-xl overflow-hidden border border-purple-500/20 shadow-inner bg-slate-900" style="height: 400px;">
         <iframe src="${data.pdfUrl}#toolbar=1&navpanes=0" width="100%" height="100%" style="border: none;">
           <p class="text-xs text-white p-4 text-center">Browser tidak mendukung PDF Viewer. Silakan unduh manual berkas.</p>
         </iframe>
@@ -595,7 +660,7 @@
   function closeModal() { document.getElementById('artefakModal').style.display = 'none'; }
 
   /* ===== BROWSER THEME INTERACTION SYSTEM ===== */
-  let isDark = false;
+  let isDark = true;
   function toggleTheme() {
     isDark = !isDark;
     document.body.classList.toggle('dark', isDark);

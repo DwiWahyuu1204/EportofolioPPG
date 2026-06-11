@@ -1,0 +1,757 @@
+<!doctype html>
+<html lang="id" class="h-full scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio UTS - Dwi Wahyu Nugroho</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#7c3aed',
+            'primary-dark': '#5b21b6',
+            'primary-light': '#8b5cf6',
+            accent: '#06b6d4',
+            'accent-dark': '#0891b2',
+            gold: '#f59e0b',
+          },
+          fontFamily: {
+            display: ['Sora', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f8f7ff;
+      --bg2: #ffffff;
+      --surface: #ffffff;
+      --surface2: #f1effe;
+      --text: #1a0a3b;
+      --text-muted: #6b7280;
+      --border: rgba(124,58,237,0.12);
+      --border2: rgba(124,58,237,0.2);
+      --primary: #7c3aed;
+      --accent: #06b6d4;
+      --card-shadow: 0 4px 24px rgba(124,58,237,0.08);
+      --card-shadow-hover: 0 16px 48px rgba(124,58,237,0.18);
+      --nav-bg: rgba(248,247,255,0.85);
+    }
+
+    body.dark {
+      --bg: #0d0b1a;
+      --bg2: #130f26;
+      --surface: #1a1535;
+      --surface2: #221b45;
+      --text: #f0ebff;
+      --text-muted: #a89fcc;
+      --border: rgba(124,58,237,0.18);
+      --border2: rgba(124,58,237,0.35);
+      --card-shadow: 0 4px 24px rgba(0,0,0,0.4);
+      --card-shadow-hover: 0 16px 48px rgba(124,58,237,0.25);
+      --nav-bg: rgba(13,11,26,0.9);
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--card-shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--card-shadow-hover);
+      border-color: var(--border2);
+    }
+
+    .grad-text {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    nav {
+      background: var(--nav-bg);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-link {
+      position: relative;
+      color: var(--text-muted);
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover, .nav-link.active { color: var(--primary); }
+    .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+    .section-pad { padding: 100px 0 80px 0; }
+    
+    .section-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--primary); font-size: 12px; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 2.5px; margin-bottom: 14px;
+    }
+    .section-label::before { content: ''; width: 22px; height: 2.5px; background: linear-gradient(90deg, var(--primary), var(--accent)); border-radius: 2px; }
+
+    .theme-btn {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: var(--surface2); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: all 0.3s;
+    }
+
+    .artefak-thumb {
+      height: 120px; display: flex; align-items: center; justify-content: center;
+      font-size: 44px; border-radius: 14px 14px 0 0;
+    }
+    .at-purple { background: linear-gradient(135deg, rgba(124,58,237,0.15), rgba(124,58,237,0.04)); }
+    .at-cyan { background: linear-gradient(135deg, rgba(6,182,212,0.15), rgba(6,182,212,0.04)); }
+    .at-amber { background: linear-gradient(135deg, rgba(245,158,11,0.15), rgba(245,158,11,0.04)); }
+
+    .artefak-tag {
+      display: inline-block; background: rgba(124,58,237,0.1); color: var(--primary);
+      padding: 3px 12px; border-radius: 100px; font-size: 11px; font-weight: 700; margin-bottom: 8px;
+      text-transform: capitalize;
+    }
+
+    .masonry { columns: 3; gap: 1.5rem; }
+    @media(max-width: 768px){ .masonry { columns: 1; } }
+    .galeri-item {
+      border-radius: 18px; overflow: hidden; display: flex;
+      align-items: center; justify-content: center; font-size: 52px;
+      transition: transform 0.3s; margin-bottom: 1.5rem;
+    }
+    .galeri-item:hover { transform: scale(1.02); }
+
+    .progress-bar { width: 100%; height: 7px; border-radius: 100px; background: var(--surface2); overflow: hidden; }
+    .progress-fill { height: 100%; border-radius: 100px; background: linear-gradient(90deg, var(--primary), var(--accent)); transition: width 1.2s ease; }
+
+    .tl-item { position: relative; padding-left: 28px; }
+    .tl-item::before { content: ''; position: absolute; left: 0; top: 3px; width: 13px; height: 13px; border-radius: 50%; background: var(--primary); border: 3px solid var(--bg); }
+    .tl-item::after { content: ''; position: absolute; left: 5px; top: 16px; width: 2px; height: calc(100% + 16px); background: linear-gradient(to bottom, var(--primary), var(--accent)); }
+    .tl-item:last-child::after { display: none; }
+
+    .modal-overlay {
+      position: fixed; inset: 0; z-index: 200;
+      background: rgba(0,0,0,0.6); backdrop-filter: blur(8px);
+      display: flex; align-items: center; justify-content: center; padding: 16px;
+    }
+    .modal-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 24px; max-width: 850px; width: 100%;
+      padding: 28px; max-height: 90vh; overflow-y: auto; position: relative;
+    }
+
+    .filter-btn {
+      padding: 9px 22px; border-radius: 100px; font-size: 13px; font-weight: 700;
+      cursor: pointer; transition: all 0.2s; background: var(--surface2); color: var(--text-muted);
+      border: 1px solid var(--border); font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .filter-btn.active { background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: #fff; border-color: transparent; box-shadow: 0 4px 14px rgba(124,58,237,0.3); }
+
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .animate-fade-in { animation: fadeInUp 0.6s ease forwards; }
+  </style>
+</head>
+<body class="font-body">
+
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+
+      <a href="#" class="flex items-center gap-2">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:linear-gradient(135deg,var(--primary),var(--accent));">
+          <i data-lucide="graduation-cap" class="w-5 h-5 text-white"></i>
+        </div>
+        <span class="font-display font-bold text-xl" style="color:var(--text);">E-Portfolio</span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-7">
+        <a href="index.html" class="nav-link text-sm">Profil Mahasiswa</a>
+        <a href="lokasi.html" class="nav-link text-sm">Lokasi LPTK</a>
+     <a href="portofolio1.html" class="nav-link text-sm">Portfolio Topik 4</a>
+        <a href="#" class="nav-link text-sm active">Portfolio UTS</a>
+        <a href="portofolio3.html" class="nav-link text-sm">Portolio UAS</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <button id="themeBtn" class="theme-btn" onclick="toggleTheme()">
+          <i id="themeIcon" data-lucide="moon" class="w-5 h-5" style="color:var(--text-muted);"></i>
+        </button>
+        <button class="md:hidden theme-btn" onclick="toggleMobileMenu()">
+          <i data-lucide="menu" class="w-5 h-5" style="color:var(--text-muted);"></i>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="mobileMenu" class="hidden md:hidden border-t px-4 py-4 space-y-2" style="border-color:var(--border); background:var(--surface);">
+    <a href="index.html" class="block py-2 text-sm font-semibold" style="color:var(--text-muted);">Profil Mahasiswa</a>
+    <a href="lokasi.html" class="block py-2 text-sm font-semibold text-purple-600">Lokasi LPTK</a>
+    <a href="portofolio1.html" class="block py-2 text-sm font-semibold" style="color:var(--text-muted);">Portfolio Topik 4</a>
+    <a href="#" class="block py-2 text-sm font-semibold" style="color:var(--text-muted);">Portfolio UTS</a>
+    <a href="portofolio3.html" class="block py-2 text-sm font-semibold" style="color:var(--text-muted);">Portolio UAS</a>
+  </div>
+</nav>
+
+<main class="space-y-4">
+    
+  <section id="analisis-produk" class="section-pad" style="background:var(--bg);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 animate-fade-in">
+        <div class="section-label" style="justify-content:center;">Refleksi Produk Perangkat</div>
+        <h2 class="font-display font-bold text-4xl md:text-5xl" style="color:var(--text);">Analisis <span class="grad-text">Artefak Produk</span></h2>
+        <p class="mt-3 text-sm md:text-base max-w-3xl mx-auto" style="color:var(--text-muted);">
+          Analisis mendalam terhadap perencanaan dan produk perangkat pembelajaran yang telah diimplementasikan selama PPL Terbimbing dalam 4 aspek evaluasi utama.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 animate-fade-in">
+        
+        <div class="card rounded-2xl p-6 flex flex-col justify-between border-t-4 border-rose-500">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-rose-500/10 flex items-center justify-center text-rose-500">
+              <i data-lucide="alert-circle" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display font-bold text-lg" style="color:var(--text);">Kendala Selama Proses Penyusunan</h3>
+            <p class="text-xs md:text-sm text-justify text-slate-400 leading-relaxed">
+              Tantangan terbesar terletak pada sinkronisasi pemetaan **Differentiated Learning** untuk materi Dampak Sosial Informatika (DSI). Menyusun instrumen evaluasi and lembar kerja yang adil, objektif, and mampu memfasilitasi keragaman gaya belajar siswa (audio-visual and kinestetik) di lingkungan SMK membutuhkan waktu serta validasi rubrik deskriptif yang berlapis.
+            </p>
+          </div>
+          <div class="mt-4 pt-4 border-t flex items-center justify-between text-xs text-rose-500 bg-rose-500/5 p-3 rounded-xl" style="border-color:var(--border);">
+            <span class="font-semibold">Skala Hambatan / Kerumitan:</span>
+            <span class="font-bold">Tinggi (75%)</span>
+          </div>
+        </div>
+
+        <div class="card rounded-2xl p-6 flex flex-col justify-between border-t-4 border-purple-500">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-500">
+              <i data-lucide="bookmark" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display font-bold text-lg" style="color:var(--text);">Teori &amp; Konsep Pedagogi yang Diadopsi</h3>
+            <p class="text-xs md:text-sm text-justify text-slate-400 leading-relaxed">
+              Rancangan produk mengadopsi secara ketat **Teori Konstruktivisme Sosial (Lev Vygotsky)** melalui pemicu *Zone of Proximal Development* (ZPD) berbantuan *Peer Scaffolding* kelompok, serta kerangka kerja **TPACK** (*Technological Pedagogical Content Knowledge*). Materi diintegrasikan langsung menggunakan media visual interaktif Canva and platform cek fakta online terpercaya.
+            </p>
+          </div>
+          <div class="mt-4 pt-4 border-t flex items-center justify-between text-xs text-purple-500 bg-purple-500/5 p-3 rounded-xl" style="border-color:var(--border);">
+            <span class="font-semibold">Keselarasan Teoretis:</span>
+            <span class="font-bold">Sangat Sesuai (95%)</span>
+          </div>
+        </div>
+
+        <div class="card rounded-2xl p-6 flex flex-col justify-between border-t-4 border-emerald-500">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-500">
+              <i data-lucide="check-circle-2" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display font-bold text-lg" style="color:var(--text);">Faktor Keberhasilan Penerapan Produk</h3>
+            <p class="text-xs md:text-sm text-justify text-slate-400 leading-relaxed">
+              Kunci keberhasilan implementasi ini didorong oleh ketersediaan fasilitas laboratorium komputer sekolah yang memadai and kejelasan pertanyaan pemantik yang merangsang indikator **Higher Order Thinking Skills (HOTS)** siswa. Desain LKPD yang interaktif and kontekstual terbukti menaikkan kurva atensi, partisipasi, serta kemandirian eksplorasi murid.
+            </p>
+          </div>
+          <div class="mt-4 pt-4 border-t flex items-center justify-between text-xs text-emerald-500 bg-emerald-500/5 p-3 rounded-xl" style="border-color:var(--border);">
+            <span class="font-semibold">Tingkat Capaian Output:</span>
+            <span class="font-bold">Sangat Berhasil (90%)</span>
+          </div>
+        </div>
+
+        <div class="card rounded-2xl p-6 flex flex-col justify-between border-t-4 border-cyan-500">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-500">
+              <i data-lucide="sliders" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display font-bold text-lg" style="color:var(--text);">Rencana Adaptasi Kelas Berbeda</h3>
+            <p class="text-xs md:text-sm text-justify text-slate-400 leading-relaxed">
+              Jika produk ini diterapkan pada kelas dengan keterbatasan infrastruktur internet/proyektor, komponen pengerjaan berbasis platform online akan dialihkan (*shifting*) menggunakan metode **Analogi/Unplugged Informatika**. Lembar studi kasus LKPD akan dicetak fisik (*hardcopy*) and simulasi alur etika digital dimodelkan lewat bermain peran (*role-play*) interaktif di kelas.
+            </p>
+          </div>
+          <div class="mt-4 pt-4 border-t flex items-center justify-between text-xs text-cyan-500 bg-cyan-500/5 p-3 rounded-xl" style="border-color:var(--border);">
+            <span class="font-semibold">Fleksibilitas Struktur Alat:</span>
+            <span class="font-bold">Sangat Dinamis (88%)</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="artefak" class="section-pad" style="background:var(--bg2);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 animate-fade-in">
+        <div class="section-label" style="justify-content:center;">Portofolio Produk</div>
+        <h2 class="font-display font-bold text-4xl md:text-5xl mb-4" style="color:var(--text);">Artefak <span class="grad-text">Pembelajaran</span></h2>
+        <p class="text-sm md:text-base max-w-3xl mx-auto" style="color:var(--text-muted);">Koleksi produk administrasi Modul Ajar, Perangkat RPP, Media Canva, dan Lembar Kerja Siswa (LKPD) yang telah dipisah secara spesifik per siklus.</p>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-2 mb-10 animate-fade-in">
+        <button onclick="filterArtefak('all', this)" class="filter-btn active">Semua Artefak</button>
+        <button onclick="filterArtefak('perangkat', this)" class="filter-btn">Perangkat (RPP)</button>
+        <button onclick="filterArtefak('media', this)" class="filter-btn">Media PPT Canva</button>
+        <button onclick="filterArtefak('lkpd', this)" class="filter-btn">LKPD Siswa</button>
+      </div>
+
+      <div id="artefakGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in"></div>
+    </div>
+  </section>
+
+
+
+  <section id="penilaian" class="section-pad" style="background:var(--bg);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 animate-fade-in">
+        <div class="section-label" style="justify-content:center;">Evaluasi Autentik</div>
+        <h2 class="font-display font-bold text-4xl md:text-5xl mb-3" style="color:var(--text);">Penilaian GP &amp; <span class="grad-text">DPL</span></h2>
+        <p class="text-sm md:text-base" style="color:var(--text-muted);">Hasil penilaian objektif instrumen Lampiran 7 (Penyusunan Perangkat) dan Lampiran 8 (Praktik Mengajar) dari Guru Pamong dan DPL.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="card rounded-2xl p-6 animate-fade-in border-l-4 border-purple-500">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="font-display font-bold text-xl" style="color:var(--text);">Evaluasi Siklus 1</h3>
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-purple-500/10 text-purple-600">Siklus I</span>
+          </div>
+          <div class="space-y-2 mb-4">
+            <button onclick="openNilaiModal('L7_S1')" class="w-full flex justify-between text-xs p-2 rounded-lg bg-slate-500/5 hover:bg-purple-500/10 transition">
+              <span class="text-slate-400 font-medium flex items-center gap-1"><i data-lucide="file-text" class="w-3.5 h-3.5 text-purple-500"></i> Lampiran 7 (Perangkat)</span>
+              <span class="font-bold text-purple-600">78 / 100</span>
+            </button>
+            <button onclick="openNilaiModal('L8_S1')" class="w-full flex justify-between text-xs p-2 rounded-lg bg-slate-500/5 hover:bg-cyan-500/10 transition">
+              <span class="text-slate-400 font-medium flex items-center gap-1"><i data-lucide="video" class="w-3.5 h-3.5 text-cyan-500"></i> Lampiran 8 (Praktik)</span>
+              <span class="font-bold text-cyan-500">80 / 100</span>
+            </button>
+          </div>
+          <div class="progress-bar mb-3"><div class="progress-fill" style="width:65%;"></div></div>
+          <p class="text-[11px] leading-relaxed text-justify text-slate-400 border-t pt-3">
+            <strong style="color:var(--text);">Refleksi GP:</strong> Modul ajar esensial sudah runtut, namun manajemen waktu pada sintaks diskusi heterogen siswa SMK perlu diperketat.
+          </p>
+        </div>
+
+        <div class="card rounded-2xl p-6 animate-fade-in border-l-4 border-cyan-500" style="animation-delay: 0.1s;">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="font-display font-bold text-xl" style="color:var(--text);">Evaluasi Siklus 2</h3>
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-600">Siklus II</span>
+          </div>
+          <div class="space-y-2 mb-4">
+            <button onclick="openNilaiModal('L7_S2')" class="w-full flex justify-between text-xs p-2 rounded-lg bg-slate-500/5 hover:bg-purple-500/10 transition">
+              <span class="text-slate-400 font-medium flex items-center gap-1"><i data-lucide="file-text" class="w-3.5 h-3.5 text-purple-500"></i> Lampiran 7 (Perangkat)</span>
+              <span class="font-bold text-purple-600">85 / 100</span>
+            </button>
+            <button onclick="openNilaiModal('L8_S2')" class="w-full flex justify-between text-xs p-2 rounded-lg bg-slate-500/5 hover:bg-cyan-500/10 transition">
+              <span class="text-slate-400 font-medium flex items-center gap-1"><i data-lucide="video" class="w-3.5 h-3.5 text-cyan-500"></i> Lampiran 8 (Praktik)</span>
+              <span class="font-bold text-cyan-500">87 / 100</span>
+            </button>
+          </div>
+          <div class="progress-bar mb-3"><div class="progress-fill" style="width:85%;"></div></div>
+          <p class="text-[11px] leading-relaxed text-justify text-slate-400 border-t pt-3">
+            <strong style="color:var(--text);">Refleksi GP:</strong> Penggunaan media infografis Canva sangat membantu visualisasi materi siber, partisipasi aktif kelompok naik tajam.
+          </p>
+        </div>
+
+        <div class="card rounded-2xl p-6 animate-fade-in border-2 border-purple-500/30 bg-gradient-to-br from-purple-500/5 to-cyan-500/5" style="animation-delay: 0.2s;">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="font-display font-bold text-xl" style="color:var(--text);">Evaluasi Siklus 3</h3>
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-500/10 text-amber-500">Final Mandiri 🏆</span>
+          </div>
+          <div class="space-y-2 mb-4">
+            <button onclick="openNilaiModal('L7_S3')" class="w-full flex justify-between text-xs p-2 rounded-lg bg-slate-500/5 hover:bg-purple-500/10 transition">
+              <span class="text-slate-400 font-medium flex items-center gap-1"><i data-lucide="file-text" class="w-3.5 h-3.5 text-purple-500"></i> Lampiran 7 (Perangkat)</span>
+              <span class="font-bold text-purple-600">92 / 100</span>
+            </button>
+            <button onclick="openNilaiModal('L8_S3')" class="w-full flex justify-between text-xs p-2 rounded-lg bg-slate-500/5 hover:bg-cyan-500/10 transition">
+              <span class="text-slate-400 font-medium flex items-center gap-1"><i data-lucide="video" class="w-3.5 h-3.5 text-cyan-500"></i> Lampiran 8 (Praktik)</span>
+              <span class="font-bold text-cyan-500">94 / 100</span>
+            </button>
+          </div>
+          <div class="progress-bar mb-3"><div class="progress-fill" style="width:100%;"></div></div>
+          <p class="text-[11px] leading-relaxed text-justify text-slate-400 border-t pt-3">
+            <strong style="color:var(--text);">Refleksi GP:</strong> Penerapan diferensiasi produk pada LKPD Siklus 3 sangat matang. Menunjukkan kapasitas performa guru profesional tulen.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <section id="refleksi" class="section-pad" style="background:var(--bg2);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 animate-fade-in">
+        <div class="section-label" style="justify-content:center;">Arah Kejuangan</div>
+        <h2 class="font-display font-bold text-4xl md:text-5xl" style="color:var(--text);">Model Guru <span class="grad-text">yang Dituju</span></h2>
+      </div>
+      
+      <div class="max-w-4xl mx-auto space-y-6 animate-fade-in">
+        <div class="card rounded-2xl p-8 border-l-4 border-purple-500">
+          <h3 class="font-display font-bold mb-3 flex items-center gap-2" style="color:var(--text);">
+            <i data-lucide="graduation-cap" class="w-5 h-5 text-purple-500"></i> Orientasi Pengembangan Profesionalitas
+          </h3>
+          <p class="leading-relaxed text-sm text-justify text-slate-400">
+            Sebagai mahasiswa pendidikan profesi, saya merancang misi yang ingin dituju serta memetakan ragam kompetensi dan karakter guru yang ingin dibangun untuk menuju profil guru profesional seutuhnya. Melalui program PPG Prajabatan, komitmen ini diwujudkan guna menghadirkan pembelajaran informatika inklusif yang berdampak langsung pada tumbuh kembang kemandirian bernalar kritis murid.
+          </p>
+        </div>
+
+        <div class="card rounded-2xl p-8 border-l-4 border-cyan-500">
+          <h3 class="font-display font-bold mb-4 flex items-center gap-2" style="color:var(--text);">
+            <i data-lucide="award" class="w-5 h-5 text-cyan-500"></i> Misi &amp; Komitmen Karakter Guru Profesional
+          </h3>
+          <div class="space-y-4 pl-2">
+            <div class="tl-item">
+              <p class="font-bold text-xs sm:text-sm" style="color:var(--text);">Misi Pendidik</p>
+              <p class="text-xs text-slate-400">Merancang program pengajaran Informatika berbasis studi kasus kontekstual (*Problem-Based Learning*), mengeksplorasi ekosistem kecerdasan buatan (AI) secara bijak, serta mendampingi siswa.</p>
+            </div>
+            <div class="tl-item">
+              <p class="font-bold text-xs sm:text-sm" style="color:var(--text);">Kompetensi Inti (Pedagogik &amp; TPACK)</p>
+              <p class="text-xs text-slate-400">Menguasai materi bidang studi Informatika (Algoritma, Jaringan, Dampak Sosial Informatika) yang selaras dengan keterampilan penyusunan instrumen evaluasi yang adil dan transparan.</p>
+            </div>
+            <div class="tl-item">
+              <p class="font-bold text-xs sm:text-sm" style="color:var(--text);">Karakter Guru Unggul</p>
+              <p class="text-xs text-slate-400">Membangun watak kepribadian pendidik yang kreatif, adaptif, humanis, kolaboratif, serta senantiasa membuka diri untuk merefleksikan setiap tindakan belajar.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeri" class="section-pad" style="background:var(--bg);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 animate-fade-in">
+        <div class="section-label" style="justify-content:center;">Dokumentasi</div>
+        <h2 class="font-display font-bold text-4xl md:text-5xl" style="color:var(--text);">Galeri <span class="grad-text">Kegiatan PPL</span></h2>
+      </div>
+      <div class="masonry animate-fade-in">
+        <div class="galeri-item h-56 bg-gradient-to-br from-purple-500/10 to-slate-200/5 border border-purple-500/10 overflow-hidden">
+          <img src="images/bgporto.jpeg" alt="Kegiatan PPL 1" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
+        </div>
+        <div class="galeri-item h-44 bg-gradient-to-br from-amber-500/10 to-slate-200/5 border border-amber-500/10 overflow-hidden">
+          <img src="images/bg3.jpeg" alt="Kegiatan PPL 2" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
+        </div>
+        <div class="galeri-item h-64 bg-gradient-to-br from-cyan-500/10 to-slate-200/5 border border-cyan-500/10 overflow-hidden">
+          <img src="images/bgporto2.jpeg" alt="Kegiatan PPL 3" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
+        </div>
+        <div class="galeri-item h-52 bg-gradient-to-br from-violet-500/10 to-slate-200/5 border border-violet-500/10 overflow-hidden">
+          <img src="images/kegiatan.jpeg" alt="Kegiatan PPL 4" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
+        </div>
+        <div class="galeri-item h-48 bg-gradient-to-br from-rose-500/10 to-slate-200/5 border border-rose-500/10 overflow-hidden">
+          <img src="images/kegiatan1.jpeg" alt="Kegiatan PPL 5" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
+        </div>
+        <div class="galeri-item h-60 bg-gradient-to-br from-emerald-500/10 to-slate-200/5 border border-emerald-500/10 overflow-hidden">
+          <img src="images/kegiatan2.jpeg" alt="Kegiatan PPL 6" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+</main>
+
+<div id="artefakModal" class="modal-overlay" style="display:none;" onclick="if(event.target===this)closeModal()">
+  <div class="modal-box max-w-4xl">
+    <button onclick="closeModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-500/10 flex items-center justify-center font-bold text-slate-400 hover:bg-slate-500/20 z-50">✕</button>
+    <div id="modalInnerContent" class="space-y-4"></div>
+  </div>
+</div>
+
+<footer class="py-8 border-t" style="border-color:var(--border); background: var(--surface2);">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="text-xs" style="color:var(--text-muted);">
+      © 2026 Dwi Wahyu Nugroho · PPG Prajabatan · Universitas Muhammadiyah Surakarta
+    </p>
+  </div>
+</footer>
+
+<script>
+  /* ===== DATA ARTEFAK PEMBELAJARAN ===== */
+  const artefakData = [
+    { 
+      title: 'Modul Ajar Kurikulum Merdeka', 
+      category: 'perangkat', 
+      emoji: '📄', 
+      thumb: 'at-purple', 
+      pdfUrl: 'assets/Modul_Ajar_Full.pdf', 
+      konteks: 'Modul komprehensif penunjang materi utama Dampak Sosial Informatika (DSI) di SMK.', 
+      tujuan: 'Mengarahkan kemampuan penalaran kritis siswa dalam merespons ekosistem dan etika digital.', 
+      kelebihan: 'Memiliki struktur sintaks diferensiasi yang fleksibel dan rubrik evaluasi yang transparan.',
+      kekurangan: 'Memerlukan manajemen waktu pengerjaan instruksi yang cukup longgar di kelas.',
+      teori: 'Teori Kognitivisme (Jean Piaget) — Konstruksi kognisi anak berkembang optimal melalui tantangan pemecahan masalah secara mandiri.' 
+    },
+    { 
+      title: 'RPP Informatika - Siklus 1', 
+      category: 'perangkat', 
+      emoji: '📁', 
+      thumb: 'at-purple', 
+      pdfUrl: 'pdf/rpp_siklus1.pdf', 
+      konteks: 'Rancangan pengajaran Siklus 1 PPL Terbimbing berfokus pada materi penanganan berita hoaks.', 
+      tujuan: 'Membimbing peserta didik mampu menjelaskan pengertian hoaks serta mengidentifikasi dampak negatifnya.', 
+      kelebihan: 'Konsep studi kasus kontekstual, memicu nalar kritis awal siswa dengan sangat baik.',
+      kekurangan: 'Pembagian durasi waktu pada sesi diskusi kelompok heterogen cenderung kaku.',
+      teori: 'Teori Konstruktivisme Sosial (Vygotsky) — Menekankan proses transisi pemahaman terbimbing menuju pemahaman mandiri melalui interaksi sosial.' 
+    },
+    { 
+      title: 'RPP Informatika - Siklus 2', 
+      category: 'perangkat', 
+      emoji: '📁', 
+      thumb: 'at-purple', 
+      pdfUrl: 'pdf/rpp_siklus2.pdf', 
+      konteks: 'Perangkat ajar hasil refleksi Siklus 1 untuk materi Kredibilitas Informasi Digital.', 
+      tujuan: 'Mengarahkan kemampuan peserta didik mengevaluasi keabsahan data/informasi di internet.', 
+      kelebihan: 'Penerapan pengelompokan tingkat kemampuan kognitif (*tiered groups*) berjalan dinamis.',
+      kekurangan: 'Proses transisi pengerjaan antar-aktivitas di lembar kerja sedikit memotong waktu diskusi.',
+      teori: 'Teori Belajar Bermakna (Ausubel) — Mengaitkan struktur konsep informasi digital baru dengan pengetahuan awal yang dimiliki siswa.' 
+    },
+    { 
+      title: 'RPP Informatika - Siklus 3', 
+      category: 'perangkat', 
+      emoji: '🏆', 
+      thumb: 'at-purple', 
+      pdfUrl: 'pdf/rpp_siklus3.pdf', 
+      konteks: 'Rancangan final pengajaran mandiri komprehensif materi regulasi UU ITE dan Jejak Digital.', 
+      tujuan: 'Menganalisis studi kasus implikasi hukum dan menjaga rekam jejak digital positif di dunia maya.', 
+      kelebihan: 'Sintaks diferensiasi produk akhir kelompok terlaksana dengan sangat matang.',
+      kekurangan: 'Memerlukan integrasi platform penunjang eksternal yang seragam.',
+      teori: 'Experiential Learning Theory (David Kolb) — Siklus pengalaman konkret dan refleksi berkelanjutan menghasilkan kompetensi aksi nyata yang adaptif.' 
+    },
+    { 
+      title: 'Media PPT Canva - Siklus 1', 
+      category: 'media', 
+      emoji: '🎨', 
+      thumb: 'at-cyan', 
+      pdfUrl: 'assets/siklus1/Materi_Siklus_1_DSI_Hoax.pdf', 
+      konteks: 'Bahan tayang visual presentasi pendukung Siklus 1 (Materi Hoaks dan Dampaknya).', 
+      tujuan: 'Peserta didik mampu menjelaskan pengertian hoaks serta mengidentifikasi dampak negatifnya dalam kehidupan sehari-hari.', 
+      kelebihan: 'Visualisasi ilustratif yang kontras, memicu keterbacaan teks dan fokus perhatian murid.',
+      kekurangan: 'Tingkat kejelasan materi tayang bergantung pada pencahayaan proyektor ruangan.',
+      teori: 'Cognitive Theory of Multimedia Learning (Mayer) — Pemrosesan informasi melalui kanal visual dan verbal secara seimbang memperkuat retensi memori jangka panjang.' 
+    },
+    { 
+      title: 'Media PPT Canva - Siklus 2', 
+      category: 'media', 
+      emoji: '🎨', 
+      thumb: 'at-cyan', 
+      pdfUrl: 'assets/siklus2/kredibilitas_informasi_digital_siklus2.pdf', 
+      konteks: 'Bahan tayang visual presentasi pendukung Siklus 2 (Materi Kredibilitas Informasi).', 
+      tujuan: 'Peserta didik mampu mengevaluasi ciri-ciri sumber informasi digital yang valid dan dapat dipercaya.', 
+      kelebihan: 'Menampilkan contoh komparasi situs valid dan palsu secara interaktif.',
+      kekurangan: 'Siswa memerlukan konsentrasi tinggi agar tidak terdistraksi elemen grafis transisi.',
+      teori: 'Dual-Coding Theory (Paivio) — Penyajian representasi verbal dan non-verbal secara simultan mengoptimalkan kapasitas beban kerja kognitif siswa.' 
+    },
+    { 
+      title: 'Media PPT Canva - Siklus 3', 
+      category: 'media', 
+      emoji: '🎨', 
+      thumb: 'at-cyan', 
+      pdfUrl: 'assets/siklus3/materi_ajar.pdf', 
+      konteks: 'Bahan tayang pemicu diskusi akhir Siklus 3 (Materi UU ITE & Jejak Digital).', 
+      tujuan: 'Menampilkan analisis studi kasus siber nyata sebagai pemantik diskusi kelompok.', 
+      kelebihan: 'Desain navigasi slide memudahkan guru melakukan umpan balik (*feedback*) tanya jawab spontan.',
+      kekurangan: 'Layout baris materi memerlukan resolusi layar proyektor yang tajam.',
+      teori: 'Kajian Visual Literacy (Abad 21) — Menstimulasi kemampuan murid dalam membaca, menginterpretasikan, dan mengevaluasi pesan visual digital secara kritis.' 
+    },
+    { 
+      title: 'LKPD Pembelajaran - Siklus 1', 
+      category: 'lkpd', 
+      emoji: '📝', 
+      thumb: 'at-amber', 
+      pdfUrl: 'assets/siklus1/LKPD_Hoaks_Menarik.pdf', 
+      konteks: 'Lembar aktivitas analisis mandiri kelompok untuk penanganan penyebaran berita palsu.', 
+      tujuan: 'Melatih kemampuan siswa mengidentifikasi ciri hoaks dari sampel artikel berita riil.', 
+      kelebihan: 'Panduan kerja instruksional disajikan secara bertahap dan eksplisit.',
+      kekurangan: 'Siswa dengan kecepatan belajar lambat membutuhkan repetisi penjelasan instruksi.',
+      teori: 'Konsep Scaffolding (Jerome Bruner) — Pemberian dukungan berstruktur pada tahap awal untuk membantu siswa mencapai kemandirian belajar.' 
+    },
+    { 
+      title: 'LKPD Pembelajaran - Siklus 2', 
+      category: 'lkpd', 
+      emoji: '📝', 
+      thumb: 'at-amber', 
+      pdfUrl: 'assets/siklus2/lkpd_siklus2.pdf', 
+      konteks: 'Lembar kerja kelompok evaluasi validitas berita digital internet.', 
+      tujuan: 'Siswa mampu melacak orisinalitas fakta berita menggunakan instrumen cek fakta online.', 
+      kelebihan: 'Masalah bersumber langsung dari dinamika sosial media yang dekat dengan kehidupan murid.',
+      kekurangan: 'Rubrik penilaian deskriptif memerlukan waktu koreksi yang cukup mendetail.',
+      teori: 'Problem-Based Learning (PBL) — Menempatkan masalah dunia nyata sebagai stimulus utama pembelajaran untuk mengembangkan keterampilan problem-solving.' 
+    },
+    { 
+      title: 'LKPD Pembelajaran - Siklus 3', 
+      category: 'lkpd', 
+      emoji: '📝', 
+      thumb: 'at-amber', 
+      pdfUrl: 'assets/siklus3/lkpd_pert3.pdf', 
+      konteks: 'Lembar kerja portofolio pemetaan rekam jejak digital akun personal.', 
+      tujuan: 'Siswa mampu merancang rencana pengelolaan jejak digital yang bersih, aman, dan profesional.', 
+      kelebihan: 'Mendorong kecakapan tingkat tinggi (HOTS) serta refleksi etika siber.',
+      kekurangan: 'Memerlukan jaringan internet yang stabil untuk melakukan penelusuran mandiri.',
+      teori: 'Kecakapan Abad 21 (4C) — Secara efektif merangsang indikator Critical Thinking, Communication, dan Collaboration dalam pengerjaan tim.' 
+    }
+  ];
+
+  /* ===== DATA DOKUMEN PENILAIAN AUTENTIK ===== */
+  const nilaiData = {
+    L7_S1: { title: 'Lampiran 7: Penilaian Perangkat - Siklus 1', score: '78/100', pdfUrl: 'pdf/lampiran7_s1.pdf', detail: 'Evaluasi keselarasan tujuan pembelajaran kurikulum merdeka dengan instrumen evaluasi formatif awal.' },
+    L8_S1: { title: 'Lampiran 8: Penilaian Praktik Mengajar - Siklus 1', score: '80/100', pdfUrl: 'pdf/lampiran8_s1.pdf', detail: 'Penilaian performa mengajar, pengelolaan dinamika kelas, and intonasi suara di depan siswa.' },
+    L7_S2: { title: 'Lampiran 7: Penilaian Perangkat - Siklus 2', score: '85/100', pdfUrl: 'pdf/lampiran7_s2.pdf', detail: 'Pemeriksaan integrasi konten materi esensial berbasis TPACK and keselarasan lembar LKPD kelompok.' },
+    L8_S2: { title: 'Lampiran 8: Penilaian Praktik Mengajar - Siklus 2', score: '87/100', pdfUrl: 'pdf/lampiran8_s2.pdf', detail: 'Evaluasi keaktifan interaksi umpan balik siswa berbantuan tayangan presentasi canva.' },
+    L7_S3: { title: 'Lampiran 7: Penilaian Perangkat - Siklus 3', score: '92/100', pdfUrl: 'pdf/lampiran7_s3.pdf', detail: 'Validasi rubrik penilaian autentik holistik pada rancangan materi Dampak Sosial Informatika.' },
+    L8_S3: { title: 'Lampiran 8: Penilaian Praktik Mengajar - Siklus 3', score: '94/100', pdfUrl: 'pdf/lampiran8_s3.pdf', detail: 'Uji kompetensi mengajar mandiri penuh dengan implementasi penuh pembelajaran diferensiasi produk.' }
+  };
+
+  function renderArtefakGrid(filterType = 'all') {
+    const grid = document.getElementById('artefakGrid');
+    grid.innerHTML = '';
+    const filtered = filterType === 'all' ? artefakData : artefakData.filter(a => a.category === filterType);
+    
+    filtered.forEach((item) => {
+      const card = document.createElement('div');
+      card.className = 'card rounded-2xl overflow-hidden flex flex-col justify-between';
+      card.innerHTML = `
+        <div>
+          <div class="artefak-thumb ${item.thumb}">${item.emoji}</div>
+          <div class="p-5">
+            <span class="artefak-tag">${item.category}</span>
+            <h3 class="font-display font-bold text-base mb-2" style="color:var(--text);">${item.title}</h3>
+            <p class="text-xs text-slate-400 line-clamp-2 mb-4">${item.konteks}</p>
+          </div>
+        </div>
+        <div class="px-5 pb-5">
+          <button onclick="openArtefakModal(${artefakData.indexOf(item)})" class="w-full text-center px-4 py-2.5 rounded-xl bg-purple-500/5 hover:bg-purple-500/10 text-xs font-bold text-purple-600 flex items-center justify-center gap-1.5 transition-all">
+            <i data-lucide="file-text" class="w-4 h-4"></i> Lihat Dokumen &amp; Teori
+          </button>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+    lucide.createIcons();
+  }
+
+  function filterArtefak(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderArtefakGrid(cat);
+  }
+
+  function openArtefakModal(idx) {
+    const data = artefakData[idx];
+    const content = document.getElementById('modalInnerContent');
+    content.innerHTML = `
+      <div class="flex items-center gap-2 border-b pb-3" style="border-color:var(--border);">
+        <span class="text-2xl">${data.emoji}</span>
+        <div>
+          <h3 class="font-display font-bold text-base" style="color:var(--text);">${data.title}</h3>
+          <p class="text-[10px] text-purple-500 font-bold uppercase tracking-wider">Kajian Kritis &amp; Analisis Akademik</p>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs pt-1">
+        <div class="space-y-2">
+          <div><p class="text-[10px] font-bold uppercase text-purple-500 tracking-wider">Konteks Artefak</p><p class="text-slate-400 text-justify">${data.konteks}</p></div>
+          <div><p class="text-[10px] font-bold uppercase text-purple-500 tracking-wider">Tujuan Pembelajaran</p><p class="text-slate-400 text-justify">${data.tujuan}</p></div>
+          <div><p class="text-[10px] font-bold uppercase text-purple-500 tracking-wider">Materi Pokok / Tema</p><p class="text-slate-400 italic">${data.teori}</p></div>
+        </div>
+        <div class="space-y-2">
+          <div><p class="text-[10px] font-bold uppercase text-emerald-500 tracking-wider">✓ Kelebihan Desain</p><p class="text-slate-400 text-justify">${data.kelebihan || 'Rancangan rapi, memuat pemicu pemikiran logis kontekstual.'}</p></div>
+          <div><p class="text-[10px] font-bold uppercase text-rose-500 tracking-wider">✗ Kekurangan / Kendala</p><p class="text-slate-400 text-justify">${data.kekurangan || 'Memerlukan ketepatan alokasi waktu penataan ruang kelas.'}</p></div>
+          <div class="p-2.5 rounded-xl bg-purple-500/5 border border-purple-500/10">
+            <p class="text-[9px] font-bold uppercase text-cyan-500 tracking-wider mb-0.5">Integrasi Kajian Teori PPL</p>
+            <p class="text-[11px] text-slate-400 leading-relaxed italic text-justify">${data.teori.includes('—') ? data.teori : 'Landasan Pedagogik Terpadu — Menyelaraskan muatan materi esensial digital dengan pendekatan kodrat perkembangan siswa.'}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4 rounded-xl overflow-hidden border border-purple-500/20 shadow-inner bg-slate-900" style="height: 400px;">
+        <iframe src="${data.pdfUrl}#toolbar=1&amp;navpanes=0" width="100%" height="100%" style="border: none;">
+          <p class="text-xs text-white p-4 text-center">Browser tidak mendukung PDF Viewer. Silakan unduh manual berkas.</p>
+        </iframe>
+      </div>
+    `;
+    document.getElementById('artefakModal').style.display = 'flex';
+    lucide.createIcons();
+  }
+
+  function openNilaiModal(key) {
+    const data = nilaiData[key];
+    const content = document.getElementById('modalInnerContent');
+    content.innerHTML = `
+      <div class="flex items-center justify-between border-b pb-3" style="border-color:var(--border);">
+        <div class="flex items-center gap-2">
+          <span class="text-2xl">📋</span>
+          <div>
+            <h3 class="font-display font-bold text-base" style="color:var(--text);">${data.title}</h3>
+            <p class="text-[10px] text-slate-400 font-medium">Instrumen Validasi Resmi Guru Pamong &amp; DPL</p>
+          </div>
+        </div>
+        <div class="px-3 py-1.5 rounded-xl bg-purple-500/10 text-center">
+          <p class="text-[8px] uppercase font-bold text-slate-400">Skor Perolehan</p>
+          <p class="text-sm font-black text-purple-600">${data.score}</p>
+        </div>
+      </div>
+      <p class="text-xs text-slate-400 bg-slate-500/5 p-2.5 rounded-lg border border-dashed" style="border-color:var(--border);"><strong style="color:var(--text);">Fokus Evaluasi:</strong> ${data.detail}</p>
+      <div class="mt-4 rounded-xl overflow-hidden border border-purple-500/20 shadow-inner bg-slate-900" style="height: 460px;">
+        <iframe src="${data.pdfUrl}#toolbar=1&amp;navpanes=0" width="100%" height="100%" style="border: none;">
+          <p class="text-xs text-white p-4 text-center">Browser tidak mendukung PDF Viewer.</p>
+        </iframe>
+      </div>
+    `;
+    document.getElementById('artefakModal').style.display = 'flex';
+    lucide.createIcons();
+  }
+
+  function closeModal() { document.getElementById('artefakModal').style.display = 'none'; }
+
+  /* ===== SYSTEM SWITCH INITIALIZATION ===== */
+  let isDark = false;
+  function toggleTheme() {
+    isDark = !isDark;
+    document.body.classList.toggle('dark', isDark);
+    document.getElementById('themeIcon').setAttribute('data-lucide', isDark ? 'sun' : 'moon');
+    lucide.createIcons();
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  }
+
+  function toggleMobileMenu() { document.getElementById('mobileMenu').classList.toggle('hidden'); }
+
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('shadow-md', window.scrollY > 40);
+  });
+
+  if (localStorage.getItem('theme') === 'dark') {
+    isDark = true;
+    document.body.classList.add('dark');
+    document.getElementById('themeIcon').setAttribute('data-lucide', 'sun');
+  }
+
+  renderArtefakGrid();
+  lucide.createIcons();
+</script>
+</body>
+</html>
